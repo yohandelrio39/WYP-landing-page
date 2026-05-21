@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WYP — Spacing</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg); }
+  .wrap { padding: 24px 28px; }
+  .head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; }
+  .head .t { font-size: 11px; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--fg); font-weight: 600; }
+  .head .d { font-size: 11px; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--fg-3); }
+  table { width: 100%; border-collapse: collapse; }
+  td { padding: 7px 0; font-size: 11px; vertical-align: middle; }
+  .name { font-family: var(--font-mono); color: var(--fg); width: 64px; }
+  .px   { font-family: var(--font-mono); color: var(--fg-3); width: 56px; }
+  .bar  { padding-right: 12px; }
+  .bar div { background: var(--fg); height: 8px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="head"><div class="t">Spacing scale</div><div class="d">4px base · modular grid</div></div>
+    <table>
+      <tr><td class="name">--s-1</td><td class="px">4px</td><td class="bar"><div style="width:4px"></div></td></tr>
+      <tr><td class="name">--s-2</td><td class="px">8px</td><td class="bar"><div style="width:8px"></div></td></tr>
+      <tr><td class="name">--s-3</td><td class="px">12px</td><td class="bar"><div style="width:12px"></div></td></tr>
+      <tr><td class="name">--s-4</td><td class="px">16px</td><td class="bar"><div style="width:16px"></div></td></tr>
+      <tr><td class="name">--s-5</td><td class="px">24px</td><td class="bar"><div style="width:24px"></div></td></tr>
+      <tr><td class="name">--s-6</td><td class="px">32px</td><td class="bar"><div style="width:32px"></div></td></tr>
+      <tr><td class="name">--s-7</td><td class="px">48px</td><td class="bar"><div style="width:48px"></div></td></tr>
+      <tr><td class="name">--s-8</td><td class="px">64px</td><td class="bar"><div style="width:64px"></div></td></tr>
+      <tr><td class="name">--s-9</td><td class="px">96px</td><td class="bar"><div style="width:96px"></div></td></tr>
+      <tr><td class="name">--s-10</td><td class="px">128px</td><td class="bar"><div style="width:128px"></div></td></tr>
+      <tr><td class="name">--s-11</td><td class="px">192px</td><td class="bar"><div style="width:192px"></div></td></tr>
+    </table>
+  </div>
+</body>
+</html>

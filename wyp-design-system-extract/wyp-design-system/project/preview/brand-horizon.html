@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WYP — Horizon System</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg); }
+  .wrap { padding: 22px 28px; }
+  .head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 18px; }
+  .head .t { font-size: 11px; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--fg); font-weight: 600; }
+  .head .d { font-size: 11px; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--fg-3); }
+  .row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .ex { aspect-ratio: 1 / 1; background: var(--bg-2); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; position: relative; }
+  .ex .label { position: absolute; bottom: 8px; left: 8px; font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-3); }
+
+  /* The Horizon mark, built from CSS so we can show construction */
+  .horizon { width: 70%; display: flex; flex-direction: column; align-items: center; gap: 0; }
+  .horizon .bar { width: 100%; height: 16px; background: var(--fg); }
+  .horizon .half { width: 100%; aspect-ratio: 2/1; background: var(--fg); border-radius: 9999px 9999px 0 0; margin-top: 4px; }
+
+  /* Variation 2: line repetition */
+  .ex2 { display: flex; flex-direction: column; justify-content: center; gap: 10px; padding: 18px; }
+  .ex2 .line { height: 4px; background: var(--fg); }
+
+  /* Variation 3: with type */
+  .ex3 { display: flex; flex-direction: column; justify-content: space-between; padding: 18px; align-items: stretch; }
+  .ex3 .bar { height: 6px; background: var(--fg); width: 60%; }
+  .ex3 .ttl { font-weight: 500; font-size: 18px; letter-spacing: -0.01em; }
+  .ex3 .mt { font-family: var(--font-mono); font-size: 9px; color: var(--fg-3); letter-spacing: 0.1em; text-transform: uppercase; }
+
+  /* Variation 4: night reveal */
+  .ex4 { background: var(--wyp-noir); border-color: var(--wyp-noir); display: flex; align-items: center; justify-content: center; }
+  .ex4 .horizon .bar, .ex4 .horizon .half { background: var(--wyp-blanc); }
+  .ex4 .label { color: var(--wyp-argent); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="head"><div class="t">Système Horizon</div><div class="d">Une barre · un demi-cercle · répétés</div></div>
+    <div class="row">
+      <div class="ex">
+        <div class="horizon">
+          <div class="bar"></div>
+          <div class="half"></div>
+        </div>
+        <span class="label">01 · Mark</span>
+      </div>
+      <div class="ex ex2">
+        <div class="line"></div>
+        <div class="line" style="width:80%"></div>
+        <div class="line" style="width:55%"></div>
+        <div class="line" style="width:90%"></div>
+        <div class="line" style="width:30%"></div>
+        <span class="label">02 · Répétition</span>
+      </div>
+      <div class="ex ex3">
+        <div class="bar"></div>
+        <div class="ttl">Horizon<br>Series.</div>
+        <div class="mt">WYP × MHA / 2026</div>
+        <span class="label">03 · Composition</span>
+      </div>
+      <div class="ex ex4">
+        <div class="horizon">
+          <div class="bar"></div>
+          <div class="half"></div>
+        </div>
+        <span class="label">04 · Nuit</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WYP — Voice & Tone</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg); }
+  .wrap { padding: 24px 28px; }
+  .head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 18px; }
+  .head .t { font-size: 11px; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--fg); font-weight: 600; }
+  .head .d { font-size: 11px; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--fg-3); }
+  .pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .pillar { padding: 0 16px; border-right: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
+  .pillar:first-child { padding-left: 0; }
+  .pillar:last-child { border-right: 0; padding-right: 0; }
+  .pillar .n { font-family: var(--font-mono); font-size: 9px; color: var(--fg-3); }
+  .pillar .name { font-weight: 600; font-size: 18px; color: var(--fg); letter-spacing: -0.005em; }
+  .pillar .desc { font-size: 11px; line-height: 1.4; color: var(--fg-3); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 18px; border-top: 1px solid var(--line); padding-top: 16px; }
+  .col { padding-right: 18px; }
+  .col + .col { padding-left: 18px; padding-right: 0; border-left: 1px solid var(--line); }
+  .col h { font-size: 10px; letter-spacing: var(--tracking-caps); text-transform: uppercase; font-weight: 600; display: block; margin-bottom: 8px; }
+  .col.do h { color: var(--fg); }
+  .col.dont h { color: var(--fg-3); }
+  .col p { font-size: 12px; color: var(--fg); margin: 4px 0; line-height: 1.45; }
+  .col.dont p { color: var(--fg-3); text-decoration: line-through; text-decoration-color: var(--fg-mute); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="head"><div class="t">Voice pillars</div><div class="d">Maîtrisé · Clair · Assumé · Posé</div></div>
+    <div class="pillars">
+      <div class="pillar"><div class="n">01</div><div class="name">Maîtrisé</div><div class="desc">Chaque mot est intentionnel. Aucun effet inutile.</div></div>
+      <div class="pillar"><div class="n">02</div><div class="name">Clair</div><div class="desc">Pas de complexité inutile. Compréhension immédiate.</div></div>
+      <div class="pillar"><div class="n">03</div><div class="name">Assumé</div><div class="desc">Prise de parole affirmée. Pas de justification.</div></div>
+      <div class="pillar"><div class="n">04</div><div class="name">Posé</div><div class="desc">Calme et maîtrisé. Jamais excessif ni démonstratif.</div></div>
+    </div>
+    <div class="row">
+      <div class="col do">
+        <h>+ Do</h>
+        <p>La passion mérite d'être portée avec précision.</p>
+        <p>Une pièce conçue pour affirmer une identité.</p>
+        <p>Edition numérotée. 037 / 250.</p>
+      </div>
+      <div class="col dont">
+        <h>× Don't</h>
+        <p>The ultimate must-have drop of the year! 🔥</p>
+        <p>We're so hyped to finally introduce you to…</p>
+        <p>Get yours before they're gone forever!</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

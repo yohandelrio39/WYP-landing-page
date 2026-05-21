@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WYP — Semantic Colors</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; min-height: 320px; }
+  .mode { padding: 24px 28px; }
+  .mode.nuit { background: var(--wyp-noir); color: var(--wyp-blanc); }
+  .head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 18px; }
+  .head h { font-size: 14px; font-weight: 600; letter-spacing: 0; }
+  .head .t { font-size: 10px; letter-spacing: var(--tracking-caps); text-transform: uppercase; opacity: 0.65; }
+  .tokens { display: grid; grid-template-columns: 18px 1fr auto; row-gap: 10px; column-gap: 12px; align-items: center; }
+  .sw { width: 18px; height: 18px; border: 1px solid rgba(127,127,127,0.25); }
+  .name { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0; }
+  .hex { font-family: var(--font-mono); font-size: 10px; opacity: 0.6; }
+  .mode.nuit .sw { border-color: rgba(255,255,255,0.15); }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="mode jour">
+      <div class="head"><h>Jour · Day</h><div class="t">data-theme="jour"</div></div>
+      <div class="tokens">
+        <span class="sw" style="background:#F5F5F5"></span><span class="name">--bg</span><span class="hex">#F5F5F5</span>
+        <span class="sw" style="background:#FFFFFF"></span><span class="name">--bg-2</span><span class="hex">#FFFFFF</span>
+        <span class="sw" style="background:#0B0B0C"></span><span class="name">--fg</span><span class="hex">#0B0B0C</span>
+        <span class="sw" style="background:#3B3B3E"></span><span class="name">--fg-2</span><span class="hex">#3B3B3E</span>
+        <span class="sw" style="background:#A3A3A3"></span><span class="name">--fg-mute</span><span class="hex">#A3A3A3</span>
+        <span class="sw" style="background:#E2E2E3"></span><span class="name">--line</span><span class="hex">#E2E2E3</span>
+        <span class="sw" style="background:#0B0B0C"></span><span class="name">--accent</span><span class="hex">#0B0B0C</span>
+      </div>
+    </div>
+    <div class="mode nuit">
+      <div class="head"><h>Nuit · Night</h><div class="t">data-theme="nuit"</div></div>
+      <div class="tokens">
+        <span class="sw" style="background:#0B0B0C"></span><span class="name">--bg</span><span class="hex">#0B0B0C</span>
+        <span class="sw" style="background:#161618"></span><span class="name">--bg-2</span><span class="hex">#161618</span>
+        <span class="sw" style="background:#F5F5F5"></span><span class="name">--fg</span><span class="hex">#F5F5F5</span>
+        <span class="sw" style="background:#C8C8CA"></span><span class="name">--fg-2</span><span class="hex">#C8C8CA</span>
+        <span class="sw" style="background:#6E6E72"></span><span class="name">--fg-mute</span><span class="hex">#6E6E72</span>
+        <span class="sw" style="background:#2A2A2C"></span><span class="name">--line</span><span class="hex">#2A2A2C</span>
+        <span class="sw" style="background:#F5F5F5"></span><span class="name">--accent</span><span class="hex">#F5F5F5</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

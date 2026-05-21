@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WYP — Watch Your Passion</title>
+<link rel="stylesheet" href="../../colors_and_type.css">
+<link rel="stylesheet" href="site.css">
+<link rel="icon" href="../../assets/logos/WYP_ICON_NOIR.png">
+</head>
+<body data-theme="jour">
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script type="text/babel" src="Primitives.jsx"></script>
+  <script type="text/babel" src="Nav.jsx"></script>
+  <script type="text/babel" src="Hero.jsx"></script>
+  <script type="text/babel" src="CollabBlock.jsx"></script>
+  <script type="text/babel" src="ProductGrid.jsx"></script>
+  <script type="text/babel" src="Manifeste.jsx"></script>
+  <script type="text/babel" src="Architecture.jsx"></script>
+  <script type="text/babel" src="Footer.jsx"></script>
+
+  <script type="text/babel">
+    const PRODUCTS = [
+      { id: "core-01", tier: "WYP Core",     tag: "CORE / 01",       tagPill: false, name: "Horizon — Noir",     price: "320",   image: "../../assets/imagery/wyp_img_01.jpg" },
+      { id: "edit-01", tier: "WYP Editions", tag: "WYP × MHA",       tagPill: true,  name: "Midoriya 037 / 250", price: "1'490", image: "../../assets/imagery/midoriya_02.png" },
+      { id: "core-02", tier: "WYP Core",     tag: "CORE / 02",       tagPill: false, name: "Horizon — Blanc",    price: "320",   image: "../../assets/imagery/wyp_img_02.jpg" },
+      { id: "mast-01", tier: "Master Series",tag: "MASTER N° 01",    tagPill: false, name: "Révélation",         price: "4'200", image: "../../assets/imagery/wyp_img_05.jpg" },
+      { id: "edit-02", tier: "WYP Editions", tag: "EDITION 014/120", tagPill: false, name: "Phase II",           price: "950",   image: "../../assets/imagery/wyp_img_06.jpg" },
+      { id: "core-03", tier: "WYP Core",     tag: "CORE / 03",       tagPill: false, name: "Horizon — Argent",   price: "340",   image: "../../assets/imagery/wyp_img_04.jpg" },
+    ];
+
+    function App() {
+      const [theme, setTheme] = React.useState("jour");
+      const [active, setActive] = React.useState("boutique");
+      const [cart, setCart] = React.useState(2);
+
+      React.useEffect(() => {
+        document.body.setAttribute("data-theme", theme);
+      }, [theme]);
+
+      const addToCart = (p) => setCart((c) => c + 1);
+
+      return (
+        <div className="wyp-app">
+          <Nav
+            active={active}
+            onNavigate={setActive}
+            cart={cart}
+            theme={theme}
+            onToggleTheme={() => setTheme((t) => t === "jour" ? "nuit" : "jour")}
+          />
+          <Hero theme={theme} />
+          <CollabBlock />
+          <ProductGrid products={PRODUCTS} onAdd={addToCart} />
+          <Manifeste />
+          <Architecture />
+          <Footer />
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+</body>
+</html>

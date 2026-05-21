@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WYP — Brand Imagery</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg); }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+  .tile { aspect-ratio: 4/5; overflow: hidden; position: relative; background: #0B0B0C; }
+  .tile img { width: 100%; height: 100%; object-fit: cover; filter: contrast(1.05); }
+  .tile .tag { position: absolute; bottom: 8px; left: 8px; color: #F5F5F5; font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="tile"><img src="../assets/imagery/wyp_img_01.jpg" alt=""><span class="tag">Matière</span></div>
+    <div class="tile"><img src="../assets/imagery/wyp_contrast.jpg" alt=""><span class="tag">Contraste</span></div>
+    <div class="tile"><img src="../assets/imagery/wyp_img_03.jpg" alt=""><span class="tag">Révélation</span></div>
+    <div class="tile"><img src="../assets/imagery/wyp_img_04.jpg" alt=""><span class="tag">Structure</span></div>
+    <div class="tile"><img src="../assets/imagery/wyp_img_05.jpg" alt=""><span class="tag">Lumière</span></div>
+    <div class="tile"><img src="../assets/imagery/wyp_img_06.jpg" alt=""><span class="tag">Détail</span></div>
+    <div class="tile"><img src="../assets/imagery/wyp_img_02.jpg" alt=""><span class="tag">Volume</span></div>
+    <div class="tile"><img src="../assets/imagery/wyp_hyper_a.jpeg" alt=""><span class="tag">Produit</span></div>
+  </div>
+</body>
+</html>

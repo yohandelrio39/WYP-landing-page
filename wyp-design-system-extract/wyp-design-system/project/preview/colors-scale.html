@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WYP — Neutral Scale</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg); }
+  .wrap { padding: 24px 28px; }
+  .head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; }
+  .head .t { font-size: 11px; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--fg); font-weight: 600; }
+  .head .d { font-size: 11px; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--fg-3); }
+  .scale { display: grid; grid-template-columns: repeat(11, 1fr); }
+  .step { aspect-ratio: 1 / 1.4; position: relative; }
+  .step .meta { position: absolute; bottom: 8px; left: 8px; font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.02em; }
+  .light .meta { color: #0B0B0C; opacity: 0.7; }
+  .dark .meta { color: #F5F5F5; opacity: 0.75; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="head">
+      <div class="t">Structural grey scale</div>
+      <div class="d">Noir profond → Blanc contraste</div>
+    </div>
+    <div class="scale">
+      <div class="step dark" style="background:#050506"><div class="meta">050506</div></div>
+      <div class="step dark" style="background:#0B0B0C"><div class="meta">0B0B0C</div></div>
+      <div class="step dark" style="background:#161618"><div class="meta">161618</div></div>
+      <div class="step dark" style="background:#1E1E20"><div class="meta">1E1E20</div></div>
+      <div class="step dark" style="background:#2A2A2C"><div class="meta">2A2A2C</div></div>
+      <div class="step dark" style="background:#3B3B3E"><div class="meta">3B3B3E</div></div>
+      <div class="step dark" style="background:#6E6E72"><div class="meta">6E6E72</div></div>
+      <div class="step light" style="background:#A3A3A3"><div class="meta">A3A3A3</div></div>
+      <div class="step light" style="background:#C8C8CA"><div class="meta">C8C8CA</div></div>
+      <div class="step light" style="background:#E2E2E3"><div class="meta">E2E2E3</div></div>
+      <div class="step light" style="background:#F5F5F5;border:1px solid var(--line)"><div class="meta">F5F5F5</div></div>
+    </div>
+  </div>
+</body>
+</html>

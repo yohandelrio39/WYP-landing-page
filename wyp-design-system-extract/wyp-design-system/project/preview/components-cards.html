@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WYP — Product Cards</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg); }
+  .wrap { padding: 24px 28px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+  .card { display: flex; flex-direction: column; }
+  .card .media { aspect-ratio: 1 / 1; background: #161618 center/cover no-repeat; position: relative; overflow: hidden; }
+  .card .media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease-out); }
+  .card:hover .media img { transform: scale(1.03); }
+  .card .tag { position: absolute; top: 12px; left: 12px; font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #F5F5F5; padding: 4px 8px; border: 1px solid #F5F5F5; }
+  .card .meta { padding-top: 14px; display: flex; flex-direction: column; gap: 4px; }
+  .card .overline { font-size: 10px; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--fg-3); }
+  .card .title { font-weight: 600; font-size: 16px; letter-spacing: -0.005em; color: var(--fg); }
+  .card .price { font-family: var(--font-mono); font-size: 12px; color: var(--fg); margin-top: 2px; }
+  .price-was { color: var(--fg-3); text-decoration: line-through; margin-left: 6px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="media">
+        <span class="tag">CORE / 01</span>
+        <img src="../assets/imagery/wyp_img_01.jpg" alt="">
+      </div>
+      <div class="meta">
+        <div class="overline">WYP Core</div>
+        <div class="title">Horizon — Noir</div>
+        <div class="price">CHF 320.—</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="media">
+        <span class="tag">WYP × MHA</span>
+        <img src="../assets/imagery/wyp_img_03.jpg" alt="">
+      </div>
+      <div class="meta">
+        <div class="overline">Editions · Numérotée</div>
+        <div class="title">Midoriya 037/250</div>
+        <div class="price">CHF 1'490.—</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="media">
+        <span class="tag">MASTER N° 01</span>
+        <img src="../assets/imagery/wyp_img_05.jpg" alt="">
+      </div>
+      <div class="meta">
+        <div class="overline">Master Series</div>
+        <div class="title">Révélation</div>
+        <div class="price">CHF 4'200.—</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

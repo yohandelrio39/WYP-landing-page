@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WYP — Brand Architecture</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg); }
+  .wrap { padding: 24px 28px; }
+  .head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 18px; }
+  .head .t { font-size: 11px; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--fg); font-weight: 600; }
+  .head .d { font-size: 11px; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--fg-3); }
+  .tiers { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .tier { padding: 18px 18px 22px; border: 1px solid var(--line); display: flex; flex-direction: column; gap: 10px; min-height: 200px; position: relative; }
+  .tier .n { font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); letter-spacing: 0.1em; }
+  .tier .name { font-weight: 600; font-size: 22px; letter-spacing: -0.005em; color: var(--fg); }
+  .tier .desc { font-size: 12px; color: var(--fg-2); line-height: 1.45; }
+  .tier .price { font-family: var(--font-mono); font-size: 11px; color: var(--fg); margin-top: auto; }
+  .tier.master { background: var(--wyp-noir); color: var(--wyp-blanc); border-color: var(--wyp-noir); }
+  .tier.master .name, .tier.master .price { color: var(--wyp-blanc); }
+  .tier.master .desc { color: var(--wyp-grey-300); }
+  .tier.master .n { color: var(--wyp-argent); }
+  .arrow { position: absolute; top: 18px; right: 18px; font-size: 14px; color: var(--fg); }
+  .tier.master .arrow { color: var(--wyp-blanc); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="head"><div class="t">Architecture de marque</div><div class="d">3 niveaux · colonne vertébrale partagée</div></div>
+    <div class="tiers">
+      <div class="tier">
+        <span class="arrow">→</span>
+        <div class="n">01 / TIER</div>
+        <div class="name">WYP Core</div>
+        <div class="desc">Collections accessibles. Base de la marque. Première porte des collaborations.</div>
+        <div class="price">CHF 280 — 480</div>
+      </div>
+      <div class="tier">
+        <span class="arrow">→</span>
+        <div class="n">02 / TIER</div>
+        <div class="name">WYP Editions</div>
+        <div class="desc">Séries limitées ou numérotées. Approche plus affirmée et exclusive.</div>
+        <div class="price">CHF 950 — 1'900</div>
+      </div>
+      <div class="tier master">
+        <span class="arrow">→</span>
+        <div class="n">03 / TIER</div>
+        <div class="name">Master Series</div>
+        <div class="desc">Pièces à plus forte valeur. Matériaux, finitions, conception horlogère.</div>
+        <div class="price">CHF 3'500 +</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

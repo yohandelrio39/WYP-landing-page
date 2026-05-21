@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WYP — Navigation</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg); }
+  .nav {
+    display: grid; grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 18px 28px;
+    border-bottom: 1px solid var(--line);
+    background: var(--bg);
+  }
+  .nav .left, .nav .right { display: flex; gap: 32px; align-items: center; }
+  .nav .right { justify-content: flex-end; }
+  .link { font-size: 11px; font-weight: 600; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--fg); transition: opacity 0.12s; border-bottom: 0; }
+  .link:hover { opacity: 0.55; }
+  .link.active { position: relative; }
+  .link.active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -22px; height: 1px; background: var(--fg); }
+  .logo { height: 22px; }
+  .icon-btn { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg); display: inline-flex; gap: 8px; align-items: center; cursor: pointer; }
+  .icon-btn .count { background: var(--fg); color: var(--bg); padding: 1px 6px; font-family: var(--font-mono); font-size: 10px; }
+
+  .nav.dark { background: var(--wyp-noir); color: var(--wyp-blanc); border-bottom-color: var(--wyp-grey-800); }
+  .nav.dark .link, .nav.dark .icon-btn { color: var(--wyp-blanc); }
+  .nav.dark .link.active::after { background: var(--wyp-blanc); }
+  .nav.dark .icon-btn .count { background: var(--wyp-blanc); color: var(--wyp-noir); }
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="left">
+      <a class="link active">Boutique</a>
+      <a class="link">Collaborations</a>
+      <a class="link">Master Series</a>
+      <a class="link">Manifeste</a>
+    </div>
+    <div class="center"><img class="logo" src="../assets/logos/WYP_LOGOTYPE_NOIR.png" alt="WYP"></div>
+    <div class="right">
+      <a class="icon-btn">FR / EN</a>
+      <a class="icon-btn">Compte</a>
+      <a class="icon-btn">Panier <span class="count">02</span></a>
+    </div>
+  </nav>
+  <nav class="nav dark">
+    <div class="left">
+      <a class="link active">Boutique</a>
+      <a class="link">Collaborations</a>
+      <a class="link">Master Series</a>
+      <a class="link">Manifeste</a>
+    </div>
+    <div class="center"><img class="logo" src="../assets/logos/WYP_LOGOTYPE_BLANC.png" alt="WYP"></div>
+    <div class="right">
+      <a class="icon-btn">FR / EN</a>
+      <a class="icon-btn">Compte</a>
+      <a class="icon-btn">Panier <span class="count">02</span></a>
+    </div>
+  </nav>
+</body>
+</html>

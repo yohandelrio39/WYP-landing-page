@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WYP — Buttons</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg); }
+  .wrap { padding: 28px 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .panel { padding-right: 28px; }
+  .panel + .panel { padding-left: 28px; padding-right: 0; border-left: 1px solid var(--line); }
+  .head { font-size: 10px; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--fg-3); margin-bottom: 16px; }
+  .stack { display: flex; flex-direction: column; gap: 12px; }
+  .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+
+  .btn {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 14px 26px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    background: transparent;
+    color: inherit;
+    transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), opacity var(--dur-fast) var(--ease-out);
+    border-radius: 0;
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .btn-primary { background: #0B0B0C; color: #F5F5F5; border-color: #0B0B0C; }
+  .btn-primary:hover { background: #F5F5F5; color: #0B0B0C; }
+  .btn-secondary { background: transparent; color: #0B0B0C; border-color: #0B0B0C; }
+  .btn-secondary:hover { background: #0B0B0C; color: #F5F5F5; }
+  .btn-ghost { color: #0B0B0C; padding-left: 0; padding-right: 0; }
+  .btn-ghost::after { content: "→"; font-size: 14px; letter-spacing: 0; }
+  .btn-ghost:hover { opacity: 0.55; }
+  .btn-sm { padding: 9px 16px; font-size: 10px; letter-spacing: 0.12em; }
+  .arrow { font-family: var(--font-mono); }
+
+  .panel.dark { background: #0B0B0C; color: #F5F5F5; padding: 0 28px; margin: -28px 0 -28px 0; padding-top: 28px; padding-bottom: 28px; border-left: 0; }
+  .panel.dark .head { color: #A3A3A3; }
+  .panel.dark .btn-primary { background: #F5F5F5; color: #0B0B0C; border-color: #F5F5F5; }
+  .panel.dark .btn-primary:hover { background: #0B0B0C; color: #F5F5F5; }
+  .panel.dark .btn-secondary { color: #F5F5F5; border-color: #F5F5F5; }
+  .panel.dark .btn-secondary:hover { background: #F5F5F5; color: #0B0B0C; }
+  .panel.dark .btn-ghost { color: #F5F5F5; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="panel">
+      <div class="head">Day · on blanc</div>
+      <div class="stack">
+        <div class="row">
+          <button class="btn btn-primary">Découvrir</button>
+          <button class="btn btn-secondary">En savoir plus</button>
+          <button class="btn btn-ghost">Acheter</button>
+        </div>
+        <div class="row">
+          <button class="btn btn-primary btn-sm">+ Ajouter</button>
+          <button class="btn btn-secondary btn-sm">Voir</button>
+          <button class="btn btn-primary" disabled style="opacity:0.3;cursor:not-allowed">Indisponible</button>
+        </div>
+      </div>
+    </div>
+    <div class="panel dark">
+      <div class="head">Night · on noir</div>
+      <div class="stack">
+        <div class="row">
+          <button class="btn btn-primary">Découvrir</button>
+          <button class="btn btn-secondary">En savoir plus</button>
+          <button class="btn btn-ghost">Acheter</button>
+        </div>
+        <div class="row">
+          <button class="btn btn-primary btn-sm">+ Ajouter</button>
+          <button class="btn btn-secondary btn-sm">Voir</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

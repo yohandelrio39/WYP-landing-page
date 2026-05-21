@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WYP — Motion</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg); }
+  .wrap { padding: 24px 28px; }
+  .head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; }
+  .head .t { font-size: 11px; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--fg); font-weight: 600; }
+  .head .d { font-size: 11px; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--fg-3); }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { font-size: 11px; padding: 9px 0; text-align: left; border-bottom: 1px solid var(--line); }
+  th { font-size: 9px; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--fg-3); font-weight: 500; }
+  td.name, td.val { font-family: var(--font-mono); color: var(--fg); }
+  td.ctx { color: var(--fg-3); }
+  .dot { display: inline-block; width: 6px; height: 6px; background: var(--fg); margin-right: 8px; vertical-align: middle; }
+  .anim { display: inline-block; width: 36px; height: 6px; background: var(--fg-3); position: relative; vertical-align: middle; overflow: hidden; }
+  .anim::after { content: ""; position: absolute; inset: 0 70% 0 0; background: var(--fg); animation: slide 2.4s var(--ease-out, cubic-bezier(0.2,0.7,0.2,1)) infinite; }
+  @keyframes slide { 0% { inset: 0 100% 0 0 } 50% { inset: 0 0 0 0 } 100% { inset: 0 0 0 100% } }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="head"><div class="t">Motion</div><div class="d">Restrained · révélation · no bounce</div></div>
+    <table>
+      <tr><th style="width:26%">Token</th><th style="width:18%">Value</th><th style="width:38%">Use</th><th style="width:18%"></th></tr>
+      <tr><td class="name">--dur-fast</td><td class="val">120ms</td><td class="ctx">Hover state · link opacity</td><td><span class="anim"></span></td></tr>
+      <tr><td class="name">--dur-base</td><td class="val">220ms</td><td class="ctx">Standard transitions</td><td><span class="anim"></span></td></tr>
+      <tr><td class="name">--dur-slow</td><td class="val">480ms</td><td class="ctx">Image hover-zoom</td><td><span class="anim"></span></td></tr>
+      <tr><td class="name">--dur-reveal</td><td class="val">900ms</td><td class="ctx">Jour↔Nuit · révélation</td><td><span class="anim"></span></td></tr>
+      <tr><td class="name">--ease-out</td><td class="val">cubic(0.2, 0.7, 0.2, 1)</td><td class="ctx">Default · asymmetric, restrained</td><td></td></tr>
+      <tr><td class="name">--ease-in-out</td><td class="val">cubic(0.65, 0, 0.35, 1)</td><td class="ctx">Reveals · symmetric</td><td></td></tr>
+    </table>
+  </div>
+</body>
+</html>

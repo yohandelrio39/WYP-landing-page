@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WYP — Chips & Tags</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--bg); }
+  .wrap { padding: 28px 32px; display: flex; flex-direction: column; gap: 18px; }
+  .group { display: flex; flex-direction: column; gap: 10px; }
+  .head { font-size: 10px; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--fg-3); }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .tag-meta { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 10px; border: 1px solid var(--fg); color: var(--fg); }
+  .tag-meta.fill { background: var(--fg); color: var(--bg); }
+  .tag-pill { font-family: var(--font-sans); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; padding: 8px 16px; border-radius: 999px; border: 1px solid var(--fg); color: var(--fg); }
+  .tag-pill.fill { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+  .tag-pill.argent { background: transparent; border-color: var(--wyp-argent); color: var(--wyp-argent); }
+  .badge-num { font-family: var(--font-mono); font-size: 10px; color: var(--fg); border: 1px solid var(--fg); padding: 6px 8px; letter-spacing: 0.05em; }
+  .badge-edition { display: inline-flex; align-items: baseline; gap: 6px; font-family: var(--font-mono); font-size: 11px; color: var(--fg); }
+  .badge-edition b { font-weight: 600; }
+  .dot { width: 4px; height: 4px; background: currentColor; display: inline-block; margin: 0 6px 2px; vertical-align: middle; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="group">
+      <div class="head">System marks · bracketed metadata</div>
+      <div class="row">
+        <span class="tag-meta">[11.02.2026]</span>
+        <span class="tag-meta">[WYP]</span>
+        <span class="tag-meta">[FRANCAIS]</span>
+        <span class="tag-meta fill">VERSION N_01</span>
+        <span class="tag-meta">[GENEVE · SUISSE]</span>
+      </div>
+    </div>
+    <div class="group">
+      <div class="head">Collaboration pills · the only rounded shape</div>
+      <div class="row">
+        <span class="tag-pill fill">WYP × MHA</span>
+        <span class="tag-pill">WYP × ...</span>
+        <span class="tag-pill argent">Collab à venir</span>
+      </div>
+    </div>
+    <div class="group">
+      <div class="head">Series &amp; numbered editions</div>
+      <div class="row">
+        <span class="badge-num">CORE / 01</span>
+        <span class="badge-num">EDITION 037 / 250</span>
+        <span class="badge-num">MASTER / N° 01</span>
+        <span class="badge-edition">CHF<b>320.</b><span class="dot"></span>CHF<b>1'490.</b><span class="dot"></span>CHF<b>4'200.</b></span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

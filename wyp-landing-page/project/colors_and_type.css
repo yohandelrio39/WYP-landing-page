@@ -1,0 +1,308 @@
+/* =============================================================
+   WYP — Colors & Type
+   Watch Your Passion. Contemporary Genevan watchmaking brand.
+   Source: WYP Brandguide VF (2026), WYP Brandbook FR (2026)
+   ============================================================= */
+
+/* ---------- FONTS ---------- */
+
+@font-face {
+  font-family: "BDO Grotesk";
+  src: url("fonts/BDOGrotesk-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "BDO Grotesk";
+  src: url("fonts/BDOGrotesk-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "BDO Grotesk";
+  src: url("fonts/BDOGrotesk-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "BDO Grotesk";
+  src: url("fonts/BDOGrotesk-DemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "BDO Grotesk";
+  src: url("fonts/BDOGrotesk-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "BDO Grotesk";
+  src: url("fonts/BDOGrotesk-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "BDO Grotesk";
+  src: url("fonts/BDOGrotesk-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ---------- BRAND PALETTE ---------- */
+  /* Official three-color system. Color should come from collaborations,
+     not from the brand chrome itself. */
+  --wyp-noir:    #0B0B0C; /* Primary: structure & anchor */
+  --wyp-argent:  #A3A3A3; /* Secondary: detail & nuance (silver/grey) */
+  --wyp-blanc:   #F5F5F5; /* Secondary: contrast & legibility (off-white) */
+  --wyp-pure-white: #FFFFFF;
+
+  /* Extended structural greys (derived from imagery treatment guide:
+     noir profond / argent / gris structure / blanc froid / blanc contraste) */
+  --wyp-noir-deep:    #050506; /* deeper than noir, for full-bleed blackouts */
+  --wyp-noir-soft:    #161618; /* hover/secondary surface on dark */
+  --wyp-grey-900:     #1E1E20;
+  --wyp-grey-800:     #2A2A2C;
+  --wyp-grey-700:     #3B3B3E;
+  --wyp-grey-500:     #6E6E72;
+  --wyp-grey-400:     --wyp-argent;
+  --wyp-grey-300:     #C8C8CA;
+  --wyp-grey-200:     #E2E2E3;
+  --wyp-blanc-cold:   #ECECEE; /* "blanc froid" */
+  --wyp-blanc-warm:   #F5F5F5; /* "blanc contraste" */
+
+  /* ---------- SEMANTIC TOKENS (light mode default) ---------- */
+  --bg:       var(--wyp-blanc);     /* page background */
+  --bg-2:     var(--wyp-pure-white);/* raised surfaces */
+  --bg-3:     var(--wyp-blanc-cold);
+  --fg:       var(--wyp-noir);      /* primary text */
+  --fg-2:     var(--wyp-grey-700);  /* secondary text */
+  --fg-3:     var(--wyp-grey-500);  /* tertiary / meta text */
+  --fg-mute:  var(--wyp-argent);    /* labels, captions */
+  --line:     var(--wyp-grey-200);  /* hairlines / dividers */
+  --line-strong: var(--wyp-noir);   /* structural rules */
+  --accent:   var(--wyp-noir);      /* brand uses contrast, not hue */
+
+  /* Dark "night" mode tokens — the brand explicitly plays a jour/nuit
+     duality. Apply via [data-theme="nuit"] or .nuit. */
+
+  /* ---------- TYPE STACK ---------- */
+  --font-sans: "BDO Grotesk", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, SFMono-Regular,
+               Menlo, Consolas, monospace;
+  --font-display: var(--font-sans); /* WYP uses one family across the board */
+
+  /* ---------- TYPE HIERARCHY ----------
+     From Brandguide section 3.2:
+     - Titre        150 / 120  Medium  0% tracking
+     - Sous-titre   60  / 60   Medium  0% tracking
+     - Corps        24  / 30   Medium  0% tracking
+     - Description  12.8 / 15  Medium  0% tracking
+     Translated into a responsive scale. */
+  --fs-display:   clamp(72px, 9.4vw, 150px);
+  --lh-display:   0.8;
+  --fs-h1:        clamp(48px, 5.2vw, 84px);
+  --lh-h1:        0.92;
+  --fs-h2:        clamp(36px, 3.6vw, 60px);
+  --lh-h2:        1.0;
+  --fs-h3:        clamp(24px, 2.0vw, 32px);
+  --lh-h3:        1.15;
+  --fs-h4:        clamp(18px, 1.4vw, 22px);
+  --lh-h4:        1.25;
+  --fs-body:      18px;   /* tightened from spec's 24px for screen body copy */
+  --lh-body:      1.45;
+  --fs-body-lg:   24px;
+  --lh-body-lg:   1.25;   /* 30/24 = 1.25, per spec */
+  --fs-small:     13px;
+  --lh-small:     1.35;
+  --fs-meta:      12px;
+  --lh-meta:      1.25;
+  --fs-overline:  11px;
+  --lh-overline:  1.2;
+
+  --tracking-tight:   -0.01em;
+  --tracking-normal:  0;
+  --tracking-loose:   0.04em;
+  --tracking-caps:    0.12em;  /* overlines, labels, system marks */
+
+  /* ---------- SPACING (4-base modular grid) ---------- */
+  --s-0:   0;
+  --s-1:   4px;
+  --s-2:   8px;
+  --s-3:   12px;
+  --s-4:   16px;
+  --s-5:   24px;
+  --s-6:   32px;
+  --s-7:   48px;
+  --s-8:   64px;
+  --s-9:   96px;
+  --s-10: 128px;
+  --s-11: 192px;
+  --s-12: 256px;
+
+  /* ---------- RADII ---------- */
+  /* WYP is geometric and structural. Default radius is 0. */
+  --radius-0: 0;
+  --radius-xs: 1px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 999px;  /* pill — for capsule chips only */
+
+  /* ---------- BORDERS ---------- */
+  --hairline: 1px solid var(--line);
+  --rule:     1px solid var(--line-strong);
+
+  /* ---------- SHADOWS ---------- */
+  /* Used sparingly. WYP relies on contrast and structure, not depth. */
+  --shadow-0: none;
+  --shadow-1: 0 1px 0 0 rgba(11,11,12,0.04);
+  --shadow-2: 0 8px 24px -12px rgba(11,11,12,0.18);
+  --shadow-3: 0 24px 60px -24px rgba(11,11,12,0.35);
+
+  /* ---------- MOTION ---------- */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 120ms;
+  --dur-base: 220ms;
+  --dur-slow: 480ms;
+  --dur-reveal: 900ms;   /* "révélation" — jour/nuit reveals */
+
+  /* ---------- LAYOUT ---------- */
+  --container-max: 1440px;
+  --gutter: clamp(20px, 4vw, 56px);
+  --grid-columns: 12;
+}
+
+/* Night mode — flips structure to noir-dominant */
+[data-theme="nuit"], .nuit {
+  --bg:       var(--wyp-noir);
+  --bg-2:     var(--wyp-noir-soft);
+  --bg-3:     var(--wyp-grey-900);
+  --fg:       var(--wyp-blanc);
+  --fg-2:     var(--wyp-grey-300);
+  --fg-3:     var(--wyp-argent);
+  --fg-mute:  var(--wyp-grey-500);
+  --line:     var(--wyp-grey-800);
+  --line-strong: var(--wyp-blanc);
+  --accent:   var(--wyp-blanc);
+}
+
+/* ============================================================= */
+/* SEMANTIC ELEMENTS                                              */
+/* ============================================================= */
+
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "ss01", "ss02";
+}
+
+.wyp-display, h1.display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tracking-tight);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+h1, .wyp-h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--fs-h1);
+  line-height: var(--lh-h1);
+  letter-spacing: var(--tracking-tight);
+  margin: 0;
+}
+h2, .wyp-h2 {
+  font-weight: 500;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
+  letter-spacing: var(--tracking-tight);
+  margin: 0;
+}
+h3, .wyp-h3 {
+  font-weight: 600;
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+  letter-spacing: 0;
+  margin: 0;
+}
+h4, .wyp-h4 {
+  font-weight: 600;
+  font-size: var(--fs-h4);
+  line-height: var(--lh-h4);
+  margin: 0;
+}
+
+p, .wyp-body {
+  font-weight: 500;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--fg-2);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.wyp-body-lg {
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-body-lg);
+  font-weight: 500;
+  color: var(--fg);
+}
+
+small, .wyp-small {
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  color: var(--fg-3);
+}
+
+.wyp-meta {
+  font-size: var(--fs-meta);
+  line-height: var(--lh-meta);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--fg-3);
+}
+
+.wyp-overline {
+  font-size: var(--fs-overline);
+  line-height: var(--lh-overline);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--fg-2);
+}
+
+code, kbd, samp, pre, .wyp-mono {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  letter-spacing: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  transition: opacity var(--dur-fast) var(--ease-out);
+}
+a:hover { opacity: 0.55; }
+
+::selection { background: var(--wyp-noir); color: var(--wyp-blanc); }
+[data-theme="nuit"] ::selection { background: var(--wyp-blanc); color: var(--wyp-noir); }
