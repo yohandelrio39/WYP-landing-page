@@ -321,7 +321,7 @@ body {
   overflow-x: hidden;
 
   /* Tweakable variables — overridden live by the Tweaks panel */
-  --tw-nav-logo-h: 30px;
+  --tw-nav-logo-h: 74px;
   --tw-hero-logotype-w: clamp(280px, 38vw, 540px);
   --tw-section-pad: clamp(96px, 14vh, 160px);
   --tw-accent-argent: var(--wyp-argent);
@@ -411,7 +411,7 @@ img { display: block; max-width: 100%; }
 .lp-nav {
   position: fixed; top: 0; left: 0; right: 0;
   z-index: 50;
-  padding: 22px 0;
+  padding: 37px 0;
   transition:
     background var(--dur-base) var(--ease-out),
     border-color var(--dur-base) var(--ease-out),
@@ -423,7 +423,7 @@ img { display: block; max-width: 100%; }
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-bottom-color: rgba(245,245,245,0.12);
-  padding: 14px 0;
+  padding: 24px 0;
 }
 .lp-nav-inner {
   display: grid;
@@ -473,7 +473,7 @@ img { display: block; max-width: 100%; }
   color: var(--wyp-blanc);
   display: grid;
   grid-template-rows: auto 1fr auto;
-  padding: 110px 0 36px;
+  padding: 132px 0 36px;
   overflow: hidden;
 }
 /* grid children: auto margins on .lp-container collapse to content width
@@ -590,7 +590,7 @@ body[data-theme="jour"] .lp-hero-watch::before {
   border-top: 1px solid rgba(245,245,245,0.18);
   padding-top: 18px;
 }
-.lp-hero-bottom .lp-meta-row { gap: 32px; }
+.lp-hero-bottom .lp-meta-row { gap: 32px; flex-wrap: nowrap; white-space: nowrap; }
 .lp-hero-scroll {
   font-family: var(--font-mono);
   font-size: 11px;

@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr">
+    <html lang="en">
       <head />
       <body data-theme="nuit" suppressHydrationWarning>
         {/* Inline script: restore theme before first paint to avoid flash */}

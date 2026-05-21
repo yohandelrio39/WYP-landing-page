@@ -34,7 +34,7 @@ export default function Nav() {
     <nav className={`lp-nav${scrolled ? ' is-scrolled' : ''}`} id="lpNav" aria-label="Brand">
       <div className="lp-container lp-nav-inner">
         <div className="lp-nav-left">
-          <span className="lp-meta">WYP · GENÈVE</span>
+          <span className="lp-meta">WYP · GENEVA</span>
         </div>
         <a href="#hero" className="lp-nav-logo-link" aria-label="WYP">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -45,10 +45,10 @@ export default function Nav() {
             type="button"
             className="lp-theme-toggle"
             onClick={toggleTheme}
-            aria-label="Basculer jour / nuit"
+            aria-label="Toggle day / night"
           >
             <span className="dot" />
-            <span className="lbl">{theme === 'jour' ? 'Jour' : 'Nuit'}</span>
+            <span className="lbl">{theme === 'jour' ? 'Day' : 'Night'}</span>
           </button>
         </div>
       </div>

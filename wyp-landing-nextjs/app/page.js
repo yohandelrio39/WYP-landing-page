@@ -39,10 +39,10 @@ export default function Home() {
             <span className="lp-meta">PHASE I · 2026</span>
           </div>
           <span className="lp-hero-scroll">
-            Défiler <span className="arr">↓</span>
+            Scroll <span className="arr">↓</span>
           </span>
           <div className="lp-meta-row" style={{ justifySelf: 'end' }}>
-            <span className="lp-meta">FRANÇAIS · FR</span>
+            <span className="lp-meta">ENGLISH · EN</span>
           </div>
         </div>
       </header>
@@ -68,7 +68,7 @@ export default function Home() {
             </div>
 
             <div className="lp-vision-side reveal" data-delay="3">
-              <span className="lp-meta">MANIFESTE · N°01</span>
+              <span className="lp-meta">MANIFESTO · N°01</span>
               <span className="lp-vision-sign">Watch Your Passion.</span>
             </div>
           </div>
@@ -79,13 +79,13 @@ export default function Home() {
       <section className="lp-section lp-section--light" id="produit">
         <div className="lp-container">
           <div className="lp-section-head reveal">
-            <span className="lp-snum">03 — OBJET</span>
+            <span className="lp-snum">03 — OBJECT</span>
             <h2 className="lp-section-title">Designed to<br />reveal more.</h2>
           </div>
 
           <div className="lp-produit-intro">
             <div className="reveal">
-              <span className="lp-meta">+ MATIÈRE · LUMIÈRE · DÉTAIL</span>
+              <span className="lp-meta">+ MATERIAL · LIGHT · DETAIL</span>
             </div>
             <p className="reveal" data-delay="1">
               Light changes perception.<br />
@@ -97,30 +97,30 @@ export default function Home() {
           <div className="lp-produit-grid reveal" data-delay="2">
             <figure className="lp-pf lp-pf--hero">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/imagery/wyp_sketch_courbes.jpg" alt="Esquisse de design — prototype WYP" />
+              <img src="/assets/imagery/wyp_sketch_courbes.jpg" alt="Design sketch — WYP prototype" />
               <figcaption className="lp-pf-caption">
                 <span className="num">01 / 03</span>
-                <span className="lbl">↓ Courbes</span>
+                <span className="lbl">↓ Curves</span>
               </figcaption>
             </figure>
 
             <figure className="lp-pf lp-pf--top lp-pf--contain lp-pf--dual">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img className="cadran-nuit" src="/assets/imagery/cadran_nuit.png" alt="Cadran Midoriya — version nuit" />
+              <img className="cadran-nuit" src="/assets/imagery/cadran_nuit.png" alt="Midoriya dial — night version" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img className="cadran-jour" src="/assets/imagery/cadran_jour.png" alt="Cadran Midoriya — version jour" />
+              <img className="cadran-jour" src="/assets/imagery/cadran_jour.png" alt="Midoriya dial — day version" />
               <figcaption className="lp-pf-caption">
                 <span className="num">02 / 03</span>
-                <span className="lbl">↓ Lumière</span>
+                <span className="lbl">↓ Light</span>
               </figcaption>
             </figure>
 
             <figure className="lp-pf lp-pf--bot">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/imagery/wyp_img_05.jpg" alt="Vagues noires — rythme de matière" />
+              <img src="/assets/imagery/wyp_img_05.jpg" alt="Black waves — rhythm of material" />
               <figcaption className="lp-pf-caption">
                 <span className="num">03 / 03</span>
-                <span className="lbl">↓ Matière</span>
+                <span className="lbl">↓ Material</span>
               </figcaption>
             </figure>
           </div>
@@ -138,23 +138,23 @@ export default function Home() {
           <div className="lp-collab-body">
             <div className="lp-collab-art reveal" data-delay="1">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/imagery/midoriya_02.png" alt="Cadran WYP × MHA — édition Midoriya" />
+              <img src="/assets/imagery/midoriya_02.png" alt="WYP × MHA dial — Midoriya edition" />
             </div>
 
             <div className="lp-collab-text reveal" data-delay="2">
               <span className="lp-collab-tag">WYP × MHA — Phase I</span>
               <h3 className="lp-collab-title">
-                Chaque collection<br />est un dialogue.
+                Every collection<br />is a dialogue.
               </h3>
               <p className="lp-collab-body-text">
-                Le cadran WYP est une surface. Les collaborations y déposent
-                une couleur, un récit, une culture. La marque, elle, reste
-                stable — base graphique, précision, structure.
+                The WYP dial is a surface. Collaborations bring to it a color,
+                a story, a culture. The brand itself stays constant — graphic
+                base, precision, structure.
               </p>
 
               <div className="lp-collab-stats">
                 <div className="lp-collab-stat">
-                  <span className="lbl">Édition</span>
+                  <span className="lbl">Edition</span>
                   <span className="val">037 / 250</span>
                 </div>
                 <div className="lp-collab-stat">
@@ -162,8 +162,8 @@ export default function Home() {
                   <span className="val">I · 2026</span>
                 </div>
                 <div className="lp-collab-stat">
-                  <span className="lbl">Origine</span>
-                  <span className="val">Genève · CH</span>
+                  <span className="lbl">Origin</span>
+                  <span className="val">Geneva · CH</span>
                 </div>
               </div>
             </div>
@@ -175,20 +175,20 @@ export default function Home() {
       <section className="lp-section lp-section--dark lp-suite" id="suite">
         <div className="lp-container">
           <div className="lp-section-head reveal">
-            <span className="lp-snum">05 — SUITE</span>
-            <h2 className="lp-section-title">À venir.</h2>
+            <span className="lp-snum">05 — NEXT</span>
+            <h2 className="lp-section-title">Coming soon.</h2>
           </div>
 
           <div className="lp-suite-inner">
             <h3 className="lp-suite-line reveal" data-delay="1">
-              Quelque chose
-              <span>approche.</span>
+              Something
+              <span>is coming.</span>
             </h3>
 
             <div className="lp-suite-meta reveal" data-delay="2">
               <span className="lp-suite-date">09 . 2026</span>
               <p className="lp-suite-note">
-                Première ouverture publique. La boutique suit.
+                First public opening. The store follows.
               </p>
             </div>
           </div>
@@ -211,7 +211,7 @@ export default function Home() {
             </div>
 
             <div className="lp-footer-right">
-              <span className="lp-meta">WYP · GENÈVE · CH</span>
+              <span className="lp-meta">WYP · GENEVA · CH</span>
               <span className="lp-meta">© 2026 · HYPERBIEN®</span>
             </div>
           </div>
