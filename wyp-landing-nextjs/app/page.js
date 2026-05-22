@@ -35,7 +35,6 @@ export default function Home() {
 
         <div className="lp-container lp-hero-bottom reveal" data-delay="4">
           <div className="lp-meta-row">
-            <span className="lp-meta">CONTEMPORARY · GENEVA</span>
             <span className="lp-meta">PHASE I · 2026</span>
           </div>
           <span className="lp-hero-scroll">
@@ -50,26 +49,24 @@ export default function Home() {
       {/* ───────── 02 · VISION ───────── */}
       <section className="lp-section lp-section--dark lp-vision" id="vision">
         <div className="lp-container">
+          <div className="lp-horizon lp-horizon--strong reveal" aria-hidden="true" />
           <div className="lp-section-head reveal">
             <span className="lp-snum">02 — VISION</span>
             <h2 className="lp-section-title">More than a collectible.<br />More than a watch.</h2>
           </div>
 
           <div className="lp-vision-body">
-            <div className="lp-vision-icon reveal" data-delay="1">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/logos/WYP_ICON_BLANC.png" alt="" aria-hidden="true" />
-            </div>
-
-            <div className="lp-vision-lines reveal" data-delay="2">
+            <div className="lp-vision-lines reveal" data-delay="1">
               <p>WYP creates licensed watches designed to become <em>lasting objects of passion.</em></p>
               <p>Built around iconic universes.<br />
               <em>Designed to live beyond trends.</em></p>
             </div>
 
-            <div className="lp-vision-side reveal" data-delay="3">
+            <div className="lp-vision-side reveal" data-delay="2">
               <span className="lp-meta">MANIFESTO · N°01</span>
               <span className="lp-vision-sign">Watch Your Passion.</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img className="lp-vision-icon" src="/assets/logos/WYP_ICON_BLANC.png" alt="" aria-hidden="true" />
             </div>
           </div>
         </div>
@@ -78,6 +75,7 @@ export default function Home() {
       {/* ───────── 03 · PRODUIT ───────── */}
       <section className="lp-section lp-section--light" id="produit">
         <div className="lp-container">
+          <div className="lp-horizon lp-horizon--light reveal" aria-hidden="true" />
           <div className="lp-section-head reveal">
             <span className="lp-snum">03 — OBJECT</span>
             <h2 className="lp-section-title">Designed to<br />reveal more.</h2>
@@ -97,18 +95,16 @@ export default function Home() {
           <div className="lp-produit-grid reveal" data-delay="2">
             <figure className="lp-pf lp-pf--hero">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/imagery/wyp_sketch_courbes.jpg" alt="Design sketch — WYP prototype" />
+              <img src="/assets/imagery/wyp_img_03.jpg" alt="Sculpted curves — light study" />
               <figcaption className="lp-pf-caption">
                 <span className="num">01 / 03</span>
                 <span className="lbl">↓ Curves</span>
               </figcaption>
             </figure>
 
-            <figure className="lp-pf lp-pf--top lp-pf--contain lp-pf--dual">
+            <figure className="lp-pf lp-pf--top">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img className="cadran-nuit" src="/assets/imagery/cadran_nuit.png" alt="Midoriya dial — night version" />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img className="cadran-jour" src="/assets/imagery/cadran_jour.png" alt="Midoriya dial — day version" />
+              <img src="/assets/imagery/wyp_contrast.jpg" alt="Light and shadow study" />
               <figcaption className="lp-pf-caption">
                 <span className="num">02 / 03</span>
                 <span className="lbl">↓ Light</span>
@@ -117,7 +113,7 @@ export default function Home() {
 
             <figure className="lp-pf lp-pf--bot">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/imagery/wyp_img_05.jpg" alt="Black waves — rhythm of material" />
+              <img src="/assets/imagery/wyp_img_01.jpg" alt="Material texture — brushed lines" />
               <figcaption className="lp-pf-caption">
                 <span className="num">03 / 03</span>
                 <span className="lbl">↓ Material</span>
@@ -130,15 +126,19 @@ export default function Home() {
       {/* ───────── 04 · COLLABORATIONS ───────── */}
       <section className="lp-section lp-section--dark" id="collab">
         <div className="lp-container">
+          <div className="lp-horizon lp-horizon--strong reveal" aria-hidden="true" />
           <div className="lp-section-head reveal">
             <span className="lp-snum">04 — COLLABORATIONS</span>
             <h2 className="lp-section-title">One structure.<br />Infinite universes.</h2>
           </div>
 
           <div className="lp-collab-body">
-            <div className="lp-collab-art reveal" data-delay="1">
+            <div className="lp-collab-art lp-collab-art--dual reveal" data-delay="1">
+              <span className="lume-bloom" aria-hidden="true" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/imagery/midoriya_02.png" alt="WYP × MHA dial — Midoriya edition" />
+              <img className="cadran-nuit" src="/assets/imagery/cadran_nuit.png" alt="WYP × MHA dial — night lume" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img className="cadran-jour" src="/assets/imagery/cadran_jour.png" alt="WYP × MHA dial — day" />
             </div>
 
             <div className="lp-collab-text reveal" data-delay="2">
@@ -174,22 +174,24 @@ export default function Home() {
       {/* ───────── 05 · SUITE ───────── */}
       <section className="lp-section lp-section--dark lp-suite" id="suite">
         <div className="lp-container">
+          <div className="lp-horizon lp-horizon--strong reveal" aria-hidden="true" />
           <div className="lp-section-head reveal">
             <span className="lp-snum">05 — NEXT</span>
-            <h2 className="lp-section-title">Coming soon.</h2>
+            <h2 className="lp-section-title">The reveal.</h2>
           </div>
 
           <div className="lp-suite-inner">
             <h3 className="lp-suite-line reveal" data-delay="1">
-              Something
-              <span>is coming.</span>
+              passion takes
+              <span>form.</span>
             </h3>
 
             <div className="lp-suite-meta reveal" data-delay="2">
               <span className="lp-suite-date">09 . 2026</span>
               <p className="lp-suite-note">
-                First public opening. The store follows.
+                Built in silence. Revealed in time.
               </p>
+              <span className="lp-meta">First public opening — store to follow.</span>
             </div>
           </div>
         </div>
@@ -205,20 +207,23 @@ export default function Home() {
             </div>
 
             <div className="lp-footer-center">
-              <a className="lp-ig" href="https://instagram.com/wyp.geneva" target="_blank" rel="noopener noreferrer">
-                Instagram <span className="arrow">→</span> @wyp.geneva
+              <span className="lp-meta">For licensing inquiries</span>
+              <a className="lp-ig" href="mailto:CONTACT_EMAIL_PLACEHOLDER">
+                Contact <span className="arrow">→</span>
               </a>
             </div>
 
             <div className="lp-footer-right">
+              <a className="lp-ig" href="https://instagram.com/wyp.geneva" target="_blank" rel="noopener noreferrer">
+                Instagram <span className="arrow">→</span> @wyp.geneva
+              </a>
               <span className="lp-meta">WYP · GENEVA · CH</span>
-              <span className="lp-meta">© 2026 · HYPERBIEN®</span>
             </div>
           </div>
 
           <div className="lp-footer-bottom">
             <span>Watch Your Passion ®</span>
-            <span>Version N_01 · 11.02.2026</span>
+            <span>© 2026 · HYPERBIEN®</span>
           </div>
         </div>
       </footer>

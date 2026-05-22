@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "wyp-landing",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["wyp-landing-nextjs/node_modules/next/dist/bin/next", "dev", "wyp-landing-nextjs"],
+      "port": 3000,
+      "autoPort": true
+    }
+  ]
+}

@@ -22,7 +22,7 @@ export default function Nav() {
     setTheme(next)
     localStorage.setItem('wyp-theme', next)
     // Smoke-reveal effect on cadran during theme flip
-    document.querySelectorAll('.lp-pf--dual').forEach(el => {
+    document.querySelectorAll('.lp-pf--dual, .lp-collab-art--dual').forEach(el => {
       el.classList.remove('is-flipping')
       void el.offsetWidth
       el.classList.add('is-flipping')

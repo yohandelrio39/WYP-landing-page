@@ -10,9 +10,12 @@ export default function HeroCanvas() {
     if (!mount) return
 
     const canvas = document.createElement('canvas')
+    canvas.style.display = 'block'
+    canvas.style.width = '100%'
+    canvas.style.height = '100%'
     mount.appendChild(canvas)
     const ctx = canvas.getContext('2d')
-    const dpr = Math.min(window.devicePixelRatio || 1, 2)
+    const dpr = Math.min(window.devicePixelRatio || 1, 3)
 
     let W = 1, H = 1
     function resizeCanvas() {
@@ -72,9 +75,9 @@ export default function HeroCanvas() {
     }
 
     const PARTICLE_COUNT = 1200
-    const LOGO_FIT      = 0.90
-    const NEIGHBOR_REL  = 0.034
-    const HOVER_REL     = 0.30
+    const LOGO_FIT       = 0.90
+    const NEIGHBOR_REL   = 0.034
+    const HOVER_REL      = 0.30
     const MAX_OFFSET_REL = 0.018
 
     const particles = []
@@ -114,7 +117,8 @@ export default function HeroCanvas() {
         p.oy = py + p._jy * jit
         p.x = p.ox; p.y = p.oy
         p.vx = 0; p.vy = 0
-        p.order = p.ox < midX
+        // right half = active movement on hover
+        p.order = p.ox >= midX
       }
     }
 
@@ -166,18 +170,34 @@ export default function HeroCanvas() {
     const handleResize = () => { resizeCanvas(); rebuildOrigins(); buildNeighbors() }
     window.addEventListener('resize', handleResize)
 
+    // ── Interaction state ──────────────────────────────────────────
+    let isHovered = false
     const mouse = { x: -1e4, y: -1e4 }
-    const handleMouseMove = (e) => {
+
+    function setMouse(clientX, clientY) {
       const r = mount.getBoundingClientRect()
-      const nx = (e.clientX - r.left) / r.width
-      const ny = (e.clientY - r.top) / r.height
+      const nx = (clientX - r.left) / r.width
+      const ny = (clientY - r.top) / r.height
       if (nx < 0 || nx > 1 || ny < 0 || ny > 1) { mouse.x = -1e4; mouse.y = -1e4; return }
       mouse.x = ((nx - 0.5) * 0.78 + 0.5) * W
       mouse.y = ((ny - 0.5) * 0.78 + 0.5) * H
     }
-    const handleMouseLeave = () => { mouse.x = -1e4; mouse.y = -1e4 }
-    mount.addEventListener('mousemove', handleMouseMove)
+
+    const handleMouseMove  = (e) => { isHovered = true;  setMouse(e.clientX, e.clientY) }
+    const handleMouseLeave = ()  => { isHovered = false; mouse.x = -1e4; mouse.y = -1e4 }
+
+    const handleTouchStart = (e) => {
+      isHovered = true
+      setMouse(e.touches[0].clientX, e.touches[0].clientY)
+    }
+    const handleTouchMove  = (e) => { setMouse(e.touches[0].clientX, e.touches[0].clientY) }
+    const handleTouchEnd   = ()  => { isHovered = false; mouse.x = -1e4; mouse.y = -1e4 }
+
+    mount.addEventListener('mousemove',  handleMouseMove)
     mount.addEventListener('mouseleave', handleMouseLeave)
+    mount.addEventListener('touchstart', handleTouchStart, { passive: true })
+    mount.addEventListener('touchmove',  handleTouchMove,  { passive: true })
+    mount.addEventListener('touchend',   handleTouchEnd)
 
     const startTime = performance.now()
 
@@ -188,50 +208,71 @@ export default function HeroCanvas() {
       ctx.clearRect(0, 0, W, H)
 
       const m = Math.min(W, H)
-      const INFL   = m * HOVER_REL,   INFL2   = INFL * INFL
+      const INFL    = m * HOVER_REL,    INFL2    = INFL * INFL
       const MAX_OFF = m * MAX_OFFSET_REL, MAX_OFF2 = MAX_OFF * MAX_OFF
-      const BOB    = m * 0.0022
+      const BOB     = m * 0.0022
       const LINE_MAX = m * NEIGHBOR_REL
 
+      // ── Physics ───────────────────────────────────────────────────
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i]
-        const dx = p.x - mouse.x, dy = p.y - mouse.y
-        const d2 = dx * dx + dy * dy
-        if (d2 < INFL2) {
-          const d = Math.sqrt(d2) || 0.001
-          const force = (INFL - d) * 0.018
-          p.vx += (dx / d) * force
-          p.vy += (dy / d) * force
-        }
-        if (p.order) {
-          const bobX = Math.sin(t * 0.55 + p.phase) * BOB
-          const bobY = Math.cos(t * 0.47 + p.phase * 1.3) * BOB
-          p.vx += (p.ox + bobX - p.x) * 0.06
-          p.vy += (p.oy + bobY - p.y) * 0.06
-          p.vx *= 0.86; p.vy *= 0.86
-          p.x += p.vx; p.y += p.vy
-          const ox = p.x - p.ox, oy = p.y - p.oy
-          const ol2 = ox * ox + oy * oy
-          if (ol2 > MAX_OFF2) {
-            const k = MAX_OFF / Math.sqrt(ol2)
-            p.x = p.ox + ox * k; p.y = p.oy + oy * k
-            p.vx *= 0.4; p.vy *= 0.4
+
+        if (isHovered) {
+          // Mouse repulsion — right side reacts strongly, left barely
+          const dx = p.x - mouse.x, dy = p.y - mouse.y
+          const d2 = dx * dx + dy * dy
+          if (d2 < INFL2) {
+            const d = Math.sqrt(d2) || 0.001
+            const force = (INFL - d) * (p.order ? 0.018 : 0.004)
+            p.vx += (dx / d) * force
+            p.vy += (dy / d) * force
+          }
+
+          if (p.order) {
+            // Right half — strong energetic bob
+            const bobX = Math.sin(t * 0.55 + p.phase) * BOB
+            const bobY = Math.cos(t * 0.47 + p.phase * 1.3) * BOB
+            p.vx += (p.ox + bobX - p.x) * 0.06
+            p.vy += (p.oy + bobY - p.y) * 0.06
+            p.vx *= 0.86; p.vy *= 0.86
+            p.x += p.vx; p.y += p.vy
+            const ox = p.x - p.ox, oy = p.y - p.oy
+            const ol2 = ox * ox + oy * oy
+            if (ol2 > MAX_OFF2) {
+              const k = MAX_OFF / Math.sqrt(ol2)
+              p.x = p.ox + ox * k; p.y = p.oy + oy * k
+              p.vx *= 0.4; p.vy *= 0.4
+            }
+          } else {
+            // Left half — barely perceptible drift
+            const BOB_L = BOB * 0.08
+            const bobX = Math.sin(t * 0.22 + p.phase) * BOB_L
+            const bobY = Math.cos(t * 0.18 + p.phase * 1.3) * BOB_L
+            p.vx += (p.ox + bobX - p.x) * 0.08
+            p.vy += (p.oy + bobY - p.y) * 0.08
+            p.vx *= 0.90; p.vy *= 0.90
+            p.x += p.vx; p.y += p.vy
+            const ox = p.x - p.ox, oy = p.y - p.oy
+            const ol2 = ox * ox + oy * oy
+            const SOFT2 = (MAX_OFF * 0.12) * (MAX_OFF * 0.12)
+            if (ol2 > SOFT2) {
+              const k = (MAX_OFF * 0.12) / Math.sqrt(ol2)
+              p.x = p.ox + ox * k; p.y = p.oy + oy * k
+              p.vx *= 0.6; p.vy *= 0.6
+            }
           }
         } else {
-          p.vx += (Math.random() - 0.5) * 0.5
-          p.vy += (Math.random() - 0.5) * 0.5
-          p.vx *= 0.94; p.vy *= 0.94
-          p.x += p.vx; p.y += p.vy
-          const ox = p.x - p.ox, oy = p.y - p.oy
-          const ol = Math.sqrt(ox * ox + oy * oy)
-          const BOUND = MAX_OFF * 1.6
-          if (ol > BOUND) {
-            p.x = p.ox + (ox / ol) * BOUND; p.y = p.oy + (oy / ol) * BOUND
-            p.vx *= -0.5; p.vy *= -0.5
-          }
+          // At rest — spring smoothly back to origin, no autonomous movement
+          p.vx += (p.ox - p.x) * 0.05
+          p.vy += (p.oy - p.y) * 0.05
+          p.vx *= 0.82; p.vy *= 0.82
+          p.x += p.vx
+          p.y += p.vy
         }
       }
 
+      // ── Lines ─────────────────────────────────────────────────────
+      ctx.shadowBlur = 0
       ctx.lineWidth = 0.5
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i]
@@ -246,21 +287,31 @@ export default function HeroCanvas() {
         }
       }
 
-      const dotR = Math.max(1.1, m * 0.0028)
+      // ── Dots — all glow, intensity varies per particle ────────────
+      const dotR = Math.max(1.0, m * 0.0026)
+      ctx.shadowColor = particleHex
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i]
         const tw = 0.78 + 0.22 * Math.sin(t * p.twSpeed + p.phase * 2.7)
-        ctx.fillStyle = rgba(particleHex, 0.92 * tw)
-        ctx.beginPath(); ctx.arc(p.x, p.y, dotR, 0, Math.PI * 2); ctx.fill()
+        const glow = 1.5 + 4.5 * Math.abs(Math.sin(t * p.twSpeed * 0.5 + p.phase * 1.4))
+        ctx.shadowBlur = glow
+        ctx.fillStyle = rgba(particleHex, Math.min(1, 0.80 * tw + 0.20))
+        ctx.beginPath()
+        ctx.arc(Math.round(p.x), Math.round(p.y), dotR, 0, Math.PI * 2)
+        ctx.fill()
       }
+      ctx.shadowBlur = 0
     }
     animate()
 
     return () => {
       if (animId) cancelAnimationFrame(animId)
       window.removeEventListener('resize', handleResize)
-      mount.removeEventListener('mousemove', handleMouseMove)
+      mount.removeEventListener('mousemove',  handleMouseMove)
       mount.removeEventListener('mouseleave', handleMouseLeave)
+      mount.removeEventListener('touchstart', handleTouchStart)
+      mount.removeEventListener('touchmove',  handleTouchMove)
+      mount.removeEventListener('touchend',   handleTouchEnd)
       themeObs.disconnect()
       if (canvas.parentNode) canvas.parentNode.removeChild(canvas)
     }
