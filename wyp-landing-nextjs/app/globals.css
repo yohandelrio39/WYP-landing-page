@@ -885,68 +885,39 @@ body[data-theme="jour"] .lp-pf--dual .cadran-jour { opacity: 1; }
   transform: translate(-50%, -50%);
   object-fit: contain;
   clip-path: circle(49.5% at 50% 50%);
-  transition: opacity 600ms var(--ease-out) 120ms;
+  /* Synced with the day/night toggle (same --dur-base token as the rest) */
+  transition: opacity var(--dur-base) var(--ease-out);
   z-index: 1;
 }
 
-/* Night dial — emerald lume glow + slow phosphorescent breathing */
+/* The day PNG's circle is smaller (Ø825 vs Ø880) and sits ~15px higher than
+   the night dial. Scale + nudge it onto the night dial's center so the crossfade
+   doesn't shift. Values derived from each PNG's measured circle center. */
+.lp-collab-art--dual .cadran-jour {
+  --cadran-jour-scale: 1.067;
+  --cadran-jour-dx: -1.79%;
+  --cadran-jour-dy: 1.47%;
+  transform:
+    translate(calc(-50% + var(--cadran-jour-dx)), calc(-50% + var(--cadran-jour-dy)))
+    scale(var(--cadran-jour-scale));
+}
+
+/* Night dial — internal emerald lume tint only (no glow around the dial) */
 .lp-collab-art--dual .cadran-nuit {
-  filter:
-    brightness(1.04) sepia(1) hue-rotate(96deg) saturate(3.2)
-    drop-shadow(0 0 7px rgba(28,224,148,0.65))
-    drop-shadow(0 0 20px rgba(20,180,120,0.42));
-  animation: lume-breathe 4.2s ease-in-out infinite;
+  filter: brightness(1.05) sepia(1) hue-rotate(96deg) saturate(3.2);
+  animation: lume-breathe 4.6s ease-in-out infinite;
 }
 @keyframes lume-breathe {
-  0%, 100% {
-    filter:
-      brightness(1.0) sepia(1) hue-rotate(96deg) saturate(3.0)
-      drop-shadow(0 0 6px rgba(28,224,148,0.50))
-      drop-shadow(0 0 16px rgba(20,180,120,0.32));
-  }
-  50% {
-    filter:
-      brightness(1.12) sepia(1) hue-rotate(96deg) saturate(3.5)
-      drop-shadow(0 0 11px rgba(28,224,148,0.85))
-      drop-shadow(0 0 30px rgba(20,180,120,0.52));
-  }
+  0%, 100% { filter: brightness(1.0)  sepia(1) hue-rotate(96deg) saturate(3.0); }
+  50%      { filter: brightness(1.12) sepia(1) hue-rotate(96deg) saturate(3.5); }
 }
 
-/* Emerald bloom behind the dial — powers up in night, off in day */
-.lp-collab-art--dual .lume-bloom {
-  position: absolute; inset: 0; z-index: 0;
-  pointer-events: none; border-radius: 50%;
-  background: radial-gradient(circle at 50% 50%,
-    rgba(28,224,148,0.20) 0%,
-    rgba(20,180,120,0.06) 46%,
-    transparent 70%);
-  opacity: 0;
-  transition: opacity 700ms var(--ease-out);
-}
-
-/* NUIT (default) — lume dial + bloom on */
+/* NUIT (default) — lume dial */
 body:not([data-theme="jour"]) .lp-collab-art--dual .cadran-nuit { opacity: 1; }
 body:not([data-theme="jour"]) .lp-collab-art--dual .cadran-jour { opacity: 0; }
-body:not([data-theme="jour"]) .lp-collab-art--dual .lume-bloom  { opacity: 1; }
-/* JOUR — coloured dial, lume off */
+/* JOUR — coloured dial */
 body[data-theme="jour"] .lp-collab-art--dual .cadran-nuit { opacity: 0; animation: none; }
 body[data-theme="jour"] .lp-collab-art--dual .cadran-jour { opacity: 1; }
-body[data-theme="jour"] .lp-collab-art--dual .lume-bloom  { opacity: 0; }
-
-/* "Lights-out" smoke veil on flip */
-.lp-collab-art--dual::after {
-  content: ''; position: absolute; inset: -4%;
-  z-index: 4; pointer-events: none; border-radius: 50%;
-  opacity: 0;
-  background: radial-gradient(circle at 50% 54%,
-    rgba(5,5,6,0) 14%,
-    rgba(5,5,6,0.85) 54%,
-    rgba(5,5,6,0.98) 80%);
-  filter: blur(12px);
-}
-.lp-collab-art--dual.is-flipping::after {
-  animation: cadran-smoke 850ms cubic-bezier(0.4, 0, 0.2, 1) both;
-}
 
 @media (prefers-reduced-motion: reduce) {
   .lp-collab-art--dual .cadran-nuit { animation: none; }

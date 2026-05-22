@@ -134,7 +134,6 @@ export default function Home() {
 
           <div className="lp-collab-body">
             <div className="lp-collab-art lp-collab-art--dual reveal" data-delay="1">
-              <span className="lume-bloom" aria-hidden="true" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img className="cadran-nuit" src="/assets/imagery/cadran_nuit.png" alt="WYP × MHA dial — night lume" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
