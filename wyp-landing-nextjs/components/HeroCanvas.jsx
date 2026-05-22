@@ -77,8 +77,8 @@ export default function HeroCanvas() {
     const PARTICLE_COUNT = 1200
     const LOGO_FIT       = 0.90
     const NEIGHBOR_REL   = 0.034
-    const HOVER_REL      = 0.30
-    const MAX_OFFSET_REL = 0.018
+    const HOVER_REL      = 0.34
+    const MAX_OFFSET_REL = 0.030
 
     const particles = []
     for (let i = 0; i < PARTICLE_COUNT; i++) {
@@ -108,7 +108,6 @@ export default function HeroCanvas() {
       if (!sampledPts.length || !bbox) return
       const N = sampledPts.length / 2
       const jit = Math.min(W, H)
-      const midX = W / 2
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i]
         const j = Math.floor(p._seed * N) * 2
@@ -117,8 +116,6 @@ export default function HeroCanvas() {
         p.oy = py + p._jy * jit
         p.x = p.ox; p.y = p.oy
         p.vx = 0; p.vy = 0
-        // right half = active movement on hover
-        p.order = p.ox >= midX
       }
     }
 
@@ -218,48 +215,29 @@ export default function HeroCanvas() {
         const p = particles[i]
 
         if (isHovered) {
-          // Mouse repulsion — right side reacts strongly, left barely
+          // Mouse repulsion — whole logo reacts
           const dx = p.x - mouse.x, dy = p.y - mouse.y
           const d2 = dx * dx + dy * dy
           if (d2 < INFL2) {
             const d = Math.sqrt(d2) || 0.001
-            const force = (INFL - d) * (p.order ? 0.018 : 0.004)
+            const force = (INFL - d) * 0.026
             p.vx += (dx / d) * force
             p.vy += (dy / d) * force
           }
 
-          if (p.order) {
-            // Right half — strong energetic bob
-            const bobX = Math.sin(t * 0.55 + p.phase) * BOB
-            const bobY = Math.cos(t * 0.47 + p.phase * 1.3) * BOB
-            p.vx += (p.ox + bobX - p.x) * 0.06
-            p.vy += (p.oy + bobY - p.y) * 0.06
-            p.vx *= 0.86; p.vy *= 0.86
-            p.x += p.vx; p.y += p.vy
-            const ox = p.x - p.ox, oy = p.y - p.oy
-            const ol2 = ox * ox + oy * oy
-            if (ol2 > MAX_OFF2) {
-              const k = MAX_OFF / Math.sqrt(ol2)
-              p.x = p.ox + ox * k; p.y = p.oy + oy * k
-              p.vx *= 0.4; p.vy *= 0.4
-            }
-          } else {
-            // Left half — barely perceptible drift
-            const BOB_L = BOB * 0.08
-            const bobX = Math.sin(t * 0.22 + p.phase) * BOB_L
-            const bobY = Math.cos(t * 0.18 + p.phase * 1.3) * BOB_L
-            p.vx += (p.ox + bobX - p.x) * 0.08
-            p.vy += (p.oy + bobY - p.y) * 0.08
-            p.vx *= 0.90; p.vy *= 0.90
-            p.x += p.vx; p.y += p.vy
-            const ox = p.x - p.ox, oy = p.y - p.oy
-            const ol2 = ox * ox + oy * oy
-            const SOFT2 = (MAX_OFF * 0.12) * (MAX_OFF * 0.12)
-            if (ol2 > SOFT2) {
-              const k = (MAX_OFF * 0.12) / Math.sqrt(ol2)
-              p.x = p.ox + ox * k; p.y = p.oy + oy * k
-              p.vx *= 0.6; p.vy *= 0.6
-            }
+          // Energetic bob, clamped to MAX_OFF
+          const bobX = Math.sin(t * 0.55 + p.phase) * BOB
+          const bobY = Math.cos(t * 0.47 + p.phase * 1.3) * BOB
+          p.vx += (p.ox + bobX - p.x) * 0.06
+          p.vy += (p.oy + bobY - p.y) * 0.06
+          p.vx *= 0.86; p.vy *= 0.86
+          p.x += p.vx; p.y += p.vy
+          const ox = p.x - p.ox, oy = p.y - p.oy
+          const ol2 = ox * ox + oy * oy
+          if (ol2 > MAX_OFF2) {
+            const k = MAX_OFF / Math.sqrt(ol2)
+            p.x = p.ox + ox * k; p.y = p.oy + oy * k
+            p.vx *= 0.4; p.vy *= 0.4
           }
         } else {
           // At rest — spring smoothly back to origin, no autonomous movement
