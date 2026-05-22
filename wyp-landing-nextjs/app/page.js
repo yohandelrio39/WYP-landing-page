@@ -1,6 +1,7 @@
 import Nav from '@/components/Nav'
 import HeroCanvas from '@/components/HeroCanvas'
 import RevealObserver from '@/components/RevealObserver'
+import DialThemeToggle from '@/components/DialThemeToggle'
 
 export default function Home() {
   return (
@@ -138,6 +139,7 @@ export default function Home() {
               <img className="cadran-nuit" src="/assets/imagery/cadran_nuit.png" alt="WYP × MHA dial — night lume" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img className="cadran-jour" src="/assets/imagery/cadran_jour.png" alt="WYP × MHA dial — day" />
+              <DialThemeToggle />
             </div>
 
             <div className="lp-collab-text reveal" data-delay="2">

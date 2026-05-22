@@ -922,6 +922,46 @@ body[data-theme="jour"] .lp-collab-art--dual .cadran-jour { opacity: 1; }
 @media (prefers-reduced-motion: reduce) {
   .lp-collab-art--dual .cadran-nuit { animation: none; }
 }
+
+/* Mini day/night toggle sitting just under the dial */
+.lp-dial-toggle {
+  position: absolute;
+  left: 50%; bottom: 2%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-overline);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  padding: 7px 13px;
+  border: 1px solid rgba(245,245,245,0.35);
+  background: rgba(11,11,12,0.35);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  color: var(--wyp-blanc);
+  cursor: pointer;
+  transition: all var(--dur-fast);
+}
+.lp-dial-toggle:hover {
+  background: var(--wyp-blanc);
+  color: var(--wyp-noir);
+  border-color: var(--wyp-blanc);
+}
+.lp-dial-toggle .dot {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: currentColor; flex-shrink: 0;
+}
+body[data-theme="jour"] .lp-dial-toggle {
+  border-color: rgba(11,11,12,0.4);
+  color: var(--wyp-noir);
+  background: rgba(245,245,245,0.55);
+}
+body[data-theme="jour"] .lp-dial-toggle:hover {
+  background: var(--wyp-noir);
+  color: var(--wyp-blanc);
+  border-color: var(--wyp-noir);
+}
 .lp-collab-text {
   display: flex; flex-direction: column;
   gap: var(--s-6);
