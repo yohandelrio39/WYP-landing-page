@@ -94,29 +94,29 @@ export default function Home() {
           </div>
 
           <div className="lp-produit-grid">
-            <figure className="lp-pf lp-pf--hero reveal" data-delay="1">
+            <figure className="lp-pf lp-pf--hero reveal" data-delay="3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/assets/imagery/wyp_img_03.jpg" alt="Sculpted curves — light study" />
               <figcaption className="lp-pf-caption">
-                <span className="num">01 / 03</span>
+                <span className="num">03 / 03</span>
                 <span className="lbl">↓ Curves</span>
               </figcaption>
             </figure>
 
-            <figure className="lp-pf lp-pf--top reveal" data-delay="2">
+            <figure className="lp-pf lp-pf--top reveal" data-delay="1">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/assets/imagery/wyp_contrast.jpg" alt="Light and shadow study" />
               <figcaption className="lp-pf-caption">
-                <span className="num">02 / 03</span>
+                <span className="num">01 / 03</span>
                 <span className="lbl">↓ Light</span>
               </figcaption>
             </figure>
 
-            <figure className="lp-pf lp-pf--bot reveal" data-delay="3">
+            <figure className="lp-pf lp-pf--bot reveal" data-delay="2">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/assets/imagery/wyp_img_01.jpg" alt="Material texture — brushed lines" />
               <figcaption className="lp-pf-caption">
-                <span className="num">03 / 03</span>
+                <span className="num">02 / 03</span>
                 <span className="lbl">↓ Material</span>
               </figcaption>
             </figure>

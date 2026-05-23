@@ -1398,7 +1398,7 @@ body[data-theme="jour"] .lp-section--light .lp-horizon--light::after  { backgrou
     width: 56vw;
     max-width: 240px;
     justify-self: center;
-    margin: 0 auto;
+    margin: 24px auto 0;
   }
   /* Hero text block: everything centred — overline, big WYP logotype, swiss line */
   .lp-hero-text {
@@ -1410,7 +1410,7 @@ body[data-theme="jour"] .lp-section--light .lp-horizon--light::after  { backgrou
     gap: var(--s-4);
   }
   .lp-hero-text .lp-overline { align-self: center; text-align: center; }
-  .lp-hero-text .lp-hero-logotype { margin-left: 0; margin-right: 0; align-self: center; }
+  .lp-hero-text .lp-hero-logotype { margin: -40px 0 0; align-self: center; }
   .lp-hero-text .lp-hero-line {
     align-self: center;
     text-align: center;
@@ -1448,6 +1448,10 @@ body[data-theme="jour"] .lp-section--light .lp-horizon--light::after  { backgrou
   .lp-pf--hero { min-height: 360px; aspect-ratio: 4 / 5; }
   .lp-pf--top,
   .lp-pf--bot { aspect-ratio: 4 / 3; }
+  /* Order on mobile: Light first, then Material, then Curves */
+  .lp-pf--top  { order: 1; }
+  .lp-pf--bot  { order: 2; }
+  .lp-pf--hero { order: 3; }
 
   /* ── Collab (04) ───────────────────────────────────── */
   /* Centre "One structure. Infinite universes." over the dial */
