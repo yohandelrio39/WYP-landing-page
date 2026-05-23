@@ -8,12 +8,21 @@ export default function Nav() {
 
   useEffect(() => {
     const saved = localStorage.getItem('wyp-theme') || 'nuit'
+    document.body.setAttribute('data-theme', saved)
     setTheme(saved)
+
+    const readTheme = () =>
+      document.body.getAttribute('data-theme') === 'jour' ? 'jour' : 'nuit'
+    const obs = new MutationObserver(() => setTheme(readTheme()))
+    obs.observe(document.body, { attributes: true, attributeFilter: ['data-theme'] })
 
     const onScroll = () => setScrolled(window.scrollY > 24)
     window.addEventListener('scroll', onScroll, { passive: true })
     onScroll()
-    return () => window.removeEventListener('scroll', onScroll)
+    return () => {
+      obs.disconnect()
+      window.removeEventListener('scroll', onScroll)
+    }
   }, [])
 
   const toggleTheme = () => {

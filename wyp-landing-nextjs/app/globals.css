@@ -591,7 +591,6 @@ body[data-theme="jour"] .lp-hero-watch::before {
   grid-template-columns: 1fr auto 1fr;
   align-items: end;
   gap: var(--s-5);
-  border-top: 1px solid rgba(245,245,245,0.18);
   padding-top: 18px;
 }
 .lp-hero-bottom .lp-meta-row { gap: var(--s-6); flex-wrap: nowrap; white-space: nowrap; }
@@ -651,6 +650,7 @@ body[data-theme="jour"] .lp-hero-watch::before {
 
 .lp-vision {
   border-bottom: 1px solid rgba(245,245,245,0.18);
+  padding-top: clamp(var(--s-7), 7vh, var(--s-8));
 }
 .lp-vision-body {
   display: grid;
@@ -894,9 +894,9 @@ body[data-theme="jour"] .lp-pf--dual .cadran-jour { opacity: 1; }
    the night dial. Scale + nudge it onto the night dial's center so the crossfade
    doesn't shift. Values derived from each PNG's measured circle center. */
 .lp-collab-art--dual .cadran-jour {
-  --cadran-jour-scale: 1.067;
-  --cadran-jour-dx: -1.79%;
-  --cadran-jour-dy: 1.47%;
+  --cadran-jour-scale: 1.061;
+  --cadran-jour-dx: -1.59%;
+  --cadran-jour-dy: 1.36%;
   transform:
     translate(calc(-50% + var(--cadran-jour-dx)), calc(-50% + var(--cadran-jour-dy)))
     scale(var(--cadran-jour-scale));
@@ -1022,7 +1022,6 @@ body[data-theme="jour"] .lp-dial-toggle:hover {
 .lp-suite {
   padding-top: clamp(var(--s-9), 12vh, var(--s-10));
   padding-bottom: clamp(var(--s-9), 12vh, var(--s-10));
-  border-top: 1px solid rgba(245,245,245,0.18);
   border-bottom: 1px solid rgba(245,245,245,0.18);
 }
 .lp-suite-inner {
@@ -1449,8 +1448,13 @@ body[data-theme="jour"] .lp-section--light .lp-horizon--light::after  { backgrou
   /* ── Vision (02) ───────────────────────────────────── */
   /* Half-moon icon to the right on mobile */
   .lp-vision-side .lp-vision-icon { align-self: flex-end; }
+  /* Tighten the dark space below the half-moon icon (was ~88px from section pad) */
+  .lp-vision { padding-bottom: var(--s-6); }
 
   /* ── Produit (03) — restore visible 3-image stack ─── */
+  /* Tighten top padding (closer to the dark/light seam) and bottom padding so it
+     matches the 20px side gutters of the image stack above. */
+  #produit { padding-top: var(--s-6); padding-bottom: var(--s-6); }
   /* Override desktop's 2-col grid placement so all figures span the single column */
   .lp-produit-grid { grid-template-columns: 1fr; gap: var(--s-4); }
   .lp-pf--hero,
@@ -1468,6 +1472,11 @@ body[data-theme="jour"] .lp-section--light .lp-horizon--light::after  { backgrou
   .lp-pf--hero { order: 3; }
 
   /* ── Collab (04) ───────────────────────────────────── */
+  /* Tighten the seam between collab and suite (both dark) — was 88 + 97 ≈ 185px gap */
+  #collab { padding-bottom: var(--s-8); }
+  #suite  { padding-top: var(--s-8); padding-bottom: var(--s-8); }
+  /* Same treatment for the suite→footer seam (was 97 + 96 ≈ 193px gap) */
+  .lp-footer { padding-top: var(--s-8); }
   /* Centre "One structure. Infinite universes." over the dial */
   #collab .lp-section-head { text-align: center; justify-items: center; }
   #collab .lp-section-title { text-align: center; }
