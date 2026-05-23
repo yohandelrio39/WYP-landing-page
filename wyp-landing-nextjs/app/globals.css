@@ -1140,10 +1140,10 @@ body[data-theme="jour"] .lp-dial-toggle:hover {
 
 .reveal {
   opacity: 0;
-  transform: translateY(18px);
+  transform: translateY(32px);
   transition:
-    opacity 900ms var(--ease-out),
-    transform 900ms var(--ease-out);
+    opacity 700ms var(--ease-out),
+    transform 700ms var(--ease-out);
   will-change: opacity, transform;
 }
 .reveal.is-in {
@@ -1154,6 +1154,8 @@ body[data-theme="jour"] .lp-dial-toggle:hover {
 .reveal[data-delay="2"] { transition-delay: 160ms; }
 .reveal[data-delay="3"] { transition-delay: 240ms; }
 .reveal[data-delay="4"] { transition-delay: 320ms; }
+.reveal[data-delay="5"] { transition-delay: 400ms; }
+.reveal[data-delay="6"] { transition-delay: 480ms; }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
@@ -1301,8 +1303,15 @@ body[data-theme="jour"] .lp-section--light .lp-horizon--light::after  { backgrou
   .lp-vision-side { align-items: flex-start; }
   .lp-produit-intro { grid-template-columns: 1fr; }
   .lp-produit-intro p { justify-self: start; }
+  /* Stack all 3 figures in the single column (reset desktop grid placement) */
   .lp-produit-grid { grid-template-columns: 1fr; }
-  .lp-pf--hero { grid-row: auto; min-height: 460px; }
+  .lp-pf { margin: 0; } /* reset browser default <figure> margin so all figures fill the column equally */
+  .lp-pf--hero,
+  .lp-pf--top,
+  .lp-pf--bot { grid-column: 1 / -1; grid-row: auto; }
+  .lp-pf--hero { min-height: 460px; aspect-ratio: 4 / 5; }
+  .lp-pf--top,
+  .lp-pf--bot { aspect-ratio: 4 / 3; }
   .lp-collab-body { grid-template-columns: 1fr; gap: 40px; }
   .lp-collab-art { aspect-ratio: 1/1; max-width: 420px; }
   .lp-suite-inner { grid-template-columns: 1fr; gap: var(--s-6); }
@@ -1312,4 +1321,164 @@ body[data-theme="jour"] .lp-section--light .lp-horizon--light::after  { backgrou
   .lp-footer-inner { grid-template-columns: 1fr; gap: var(--s-6); text-align: left; }
   .lp-footer-center, .lp-footer-right { text-align: left; justify-self: start; align-items: flex-start; }
   .lp-footer-bottom { flex-direction: column; gap: 8px; }
+}
+
+/* ───────── iPad PORTRAIT (601 – 960px) — esthetic polish, typography stays from design system ───────── */
+@media (min-width: 601px) and (max-width: 960px) {
+  /* Hero text: centre overline, big WYP, and Swiss line (TEXT remains above the dial) */
+  .lp-hero-text {
+    align-items: center;
+    text-align: center;
+    padding-left: 0;
+    gap: var(--s-4);
+  }
+  .lp-hero-text .lp-overline { align-self: center; text-align: center; }
+  .lp-hero-text .lp-hero-logotype { margin-left: 0; align-self: center; }
+  .lp-hero-text .lp-hero-line {
+    align-self: center;
+    text-align: center;
+    max-width: 38ch;
+  }
+
+  /* Hero bottom: PHASE I left + ENGLISH right, SCROLL centred on its own row */
+  .lp-hero-bottom {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "meta-left meta-right"
+      "scroll    scroll";
+    row-gap: var(--s-4);
+    column-gap: var(--s-5);
+  }
+  .lp-hero-bottom > .lp-meta-row:first-child { grid-area: meta-left; justify-self: start; }
+  .lp-hero-bottom > .lp-meta-row:last-child  { grid-area: meta-right; justify-self: end; }
+  .lp-hero-scroll { grid-area: scroll; justify-self: center; }
+
+  /* Vision: half-moon icon to the right */
+  .lp-vision-side .lp-vision-icon { align-self: flex-end; }
+
+  /* Collab: centre title over the dial, reorder text block, lift toggle above the dial */
+  #collab .lp-section-head { text-align: center; justify-items: center; }
+  #collab .lp-section-title { text-align: center; }
+  .lp-collab-body { gap: 18px; }
+  .lp-collab-art {
+    width: 100%;
+    max-width: 420px;
+    justify-self: center;
+    margin-top: 56px; /* room for the toggle above */
+  }
+  .lp-collab-art .lp-dial-toggle {
+    top: -44px;
+    bottom: auto;
+  }
+  .lp-collab-text { align-items: center; text-align: center; justify-self: center; }
+  .lp-collab-title    { order: 1; text-align: center; }
+  .lp-collab-tag      { order: 2; align-self: center; }
+  .lp-collab-body-text{ order: 3; }
+  .lp-collab-stats    { order: 4; width: 100%; }
+}
+
+/* ───────── PHONE (≤ 600px) — layout only, typography inherits from design system ───────── */
+@media (max-width: 600px) {
+  /* Layout-only tokens (no typography overrides — type cascades from :root) */
+  body {
+    --tw-section-pad: clamp(56px, 11vh, 88px);
+    --tw-hero-logotype-w: clamp(220px, 62vw, 330px);
+    --tw-nav-logo-h: 54px;
+  }
+
+  /* Nav: hide left meta but keep its grid slot so the logo stays centred */
+  .lp-nav { padding: var(--s-5) 0; }
+  .lp-nav-left { visibility: hidden; }
+
+  /* ── Hero ──────────────────────────────────────────── */
+  .lp-hero { padding: var(--s-9) 0 var(--s-5); }
+  .lp-hero-main { margin-top: 0; }
+  .lp-hero-watch {
+    order: 1;
+    width: 56vw;
+    max-width: 240px;
+    justify-self: center;
+    margin: 0 auto;
+  }
+  /* Hero text block: everything centred — overline, big WYP logotype, swiss line */
+  .lp-hero-text {
+    order: 2;
+    align-self: stretch;
+    align-items: center;
+    text-align: center;
+    padding-left: 0;
+    gap: var(--s-4);
+  }
+  .lp-hero-text .lp-overline { align-self: center; text-align: center; }
+  .lp-hero-text .lp-hero-logotype { margin-left: 0; margin-right: 0; align-self: center; }
+  .lp-hero-text .lp-hero-line {
+    align-self: center;
+    text-align: center;
+    padding-left: var(--s-5);
+    padding-right: var(--s-5);
+    max-width: 34ch;
+  }
+
+  /* Hero bottom row: PHASE I left + ENGLISH right on row 1, SCROLL centred on row 2 */
+  .lp-hero-bottom {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "meta-left meta-right"
+      "scroll    scroll";
+    row-gap: var(--s-4);
+    column-gap: var(--s-5);
+  }
+  .lp-hero-bottom > .lp-meta-row:first-child { grid-area: meta-left; justify-self: start; }
+  .lp-hero-bottom > .lp-meta-row:last-child  { grid-area: meta-right; justify-self: end; }
+  .lp-hero-scroll { grid-area: scroll; justify-self: center; }
+
+  /* ── Vision (02) ───────────────────────────────────── */
+  /* Half-moon icon to the right on mobile */
+  .lp-vision-side .lp-vision-icon { align-self: flex-end; }
+
+  /* ── Produit (03) — restore visible 3-image stack ─── */
+  /* Override desktop's 2-col grid placement so all figures span the single column */
+  .lp-produit-grid { grid-template-columns: 1fr; gap: var(--s-4); }
+  .lp-pf--hero,
+  .lp-pf--top,
+  .lp-pf--bot {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+  .lp-pf--hero { min-height: 360px; aspect-ratio: 4 / 5; }
+  .lp-pf--top,
+  .lp-pf--bot { aspect-ratio: 4 / 3; }
+
+  /* ── Collab (04) ───────────────────────────────────── */
+  /* Centre "One structure. Infinite universes." over the dial */
+  #collab .lp-section-head { text-align: center; justify-items: center; }
+  #collab .lp-section-title { text-align: center; }
+  /* Tighten gap between the dial and "Every collection is a dialogue." */
+  .lp-collab-body { gap: 12px; }
+  /* Reorder text block so the tag sits BELOW "Every collection is a dialogue." */
+  .lp-collab-text { align-items: center; text-align: center; }
+  .lp-collab-title    { order: 1; text-align: center; }
+  .lp-collab-tag      { order: 2; align-self: center; }
+  .lp-collab-body-text{ order: 3; }
+  .lp-collab-stats    { order: 4; width: 100%; }
+  /* Collab dial a touch smaller on phones + horizontally centred under the title */
+  .lp-collab-art {
+    width: 100%;
+    max-width: 340px;
+    justify-self: center;
+    margin-top: 52px; /* room for the day/night toggle to sit ABOVE the dial */
+  }
+  /* Day/night toggle: move from below the dial to above it, centred with the title */
+  .lp-collab-art .lp-dial-toggle {
+    top: -42px;
+    bottom: auto;
+  }
+
+  /* Comfortable tap targets on both theme toggles */
+  .lp-theme-toggle, .lp-dial-toggle { padding: 10px 14px; }
+}
+
+/* ───────── SMALL PHONE (≤ 400px) ───────── */
+@media (max-width: 400px) {
+  .lp-collab-art { max-width: 290px; }
 }

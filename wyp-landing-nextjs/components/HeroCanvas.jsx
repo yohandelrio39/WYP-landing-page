@@ -74,7 +74,7 @@ export default function HeroCanvas() {
       })
     }
 
-    const PARTICLE_COUNT = 1200
+    const PARTICLE_COUNT = window.innerWidth <= 600 ? 640 : 1200
     const LOGO_FIT       = 0.90
     const NEIGHBOR_REL   = 0.034
     const HOVER_REL      = 0.34

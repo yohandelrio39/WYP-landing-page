@@ -93,8 +93,8 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="lp-produit-grid reveal" data-delay="2">
-            <figure className="lp-pf lp-pf--hero">
+          <div className="lp-produit-grid">
+            <figure className="lp-pf lp-pf--hero reveal" data-delay="1">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/assets/imagery/wyp_img_03.jpg" alt="Sculpted curves — light study" />
               <figcaption className="lp-pf-caption">
@@ -103,7 +103,7 @@ export default function Home() {
               </figcaption>
             </figure>
 
-            <figure className="lp-pf lp-pf--top">
+            <figure className="lp-pf lp-pf--top reveal" data-delay="2">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/assets/imagery/wyp_contrast.jpg" alt="Light and shadow study" />
               <figcaption className="lp-pf-caption">
@@ -112,7 +112,7 @@ export default function Home() {
               </figcaption>
             </figure>
 
-            <figure className="lp-pf lp-pf--bot">
+            <figure className="lp-pf lp-pf--bot reveal" data-delay="3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/assets/imagery/wyp_img_01.jpg" alt="Material texture — brushed lines" />
               <figcaption className="lp-pf-caption">
@@ -154,15 +154,15 @@ export default function Home() {
               </p>
 
               <div className="lp-collab-stats">
-                <div className="lp-collab-stat">
+                <div className="lp-collab-stat reveal" data-delay="1">
                   <span className="lbl">Edition</span>
                   <span className="val">037 / 250</span>
                 </div>
-                <div className="lp-collab-stat">
+                <div className="lp-collab-stat reveal" data-delay="2">
                   <span className="lbl">Phase</span>
                   <span className="val">I · 2026</span>
                 </div>
-                <div className="lp-collab-stat">
+                <div className="lp-collab-stat reveal" data-delay="3">
                   <span className="lbl">Origin</span>
                   <span className="val">Geneva · CH</span>
                 </div>
@@ -175,19 +175,19 @@ export default function Home() {
       {/* ───────── 05 · SUITE ───────── */}
       <section className="lp-section lp-section--dark lp-suite" id="suite">
         <div className="lp-container">
-          <div className="lp-horizon lp-horizon--strong reveal" aria-hidden="true" />
-          <div className="lp-section-head reveal">
+          <div className="lp-horizon lp-horizon--strong" aria-hidden="true" />
+          <div className="lp-section-head">
             <span className="lp-snum">05 — NEXT</span>
             <h2 className="lp-section-title">The reveal.</h2>
           </div>
 
           <div className="lp-suite-inner">
-            <h3 className="lp-suite-line reveal" data-delay="1">
+            <h3 className="lp-suite-line">
               passion takes
               <span>form.</span>
             </h3>
 
-            <div className="lp-suite-meta reveal" data-delay="2">
+            <div className="lp-suite-meta">
               <span className="lp-suite-date">09 . 2026</span>
               <p className="lp-suite-note">
                 Built in silence. Revealed in time.
@@ -202,19 +202,19 @@ export default function Home() {
       <footer className="lp-footer">
         <div className="lp-container">
           <div className="lp-footer-inner">
-            <div className="lp-footer-icon">
+            <div className="lp-footer-icon reveal" data-delay="1">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/assets/logos/WYP_ICON_BLANC.png" alt="WYP" />
             </div>
 
-            <div className="lp-footer-center">
+            <div className="lp-footer-center reveal" data-delay="2">
               <span className="lp-meta">For licensing inquiries</span>
               <a className="lp-ig" href="mailto:CONTACT_EMAIL_PLACEHOLDER">
                 Contact <span className="arrow">→</span>
               </a>
             </div>
 
-            <div className="lp-footer-right">
+            <div className="lp-footer-right reveal" data-delay="3">
               <a className="lp-ig" href="https://instagram.com/wyp.geneva" target="_blank" rel="noopener noreferrer">
                 Instagram <span className="arrow">→</span> @wyp.geneva
               </a>
@@ -222,7 +222,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="lp-footer-bottom">
+          <div className="lp-footer-bottom reveal" data-delay="4">
             <span>Watch Your Passion ®</span>
             <span>© 2026 · HYPERBIEN®</span>
           </div>
