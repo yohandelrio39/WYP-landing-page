@@ -1391,32 +1391,46 @@ body[data-theme="jour"] .lp-section--light .lp-horizon--light::after  { backgrou
   .lp-nav-left { visibility: hidden; }
 
   /* ── Hero ──────────────────────────────────────────── */
-  .lp-hero { padding: var(--s-9) 0 var(--s-5); }
-  .lp-hero-main { margin-top: 0; }
-  .lp-hero-watch {
+  /* Push hero content down so the dial sits ~mid-viewport, and keep the whole
+     hero (incl. bottom meta row) within one phone screen height. */
+  .lp-hero { padding: var(--s-7) 0 var(--s-4); }
+  .lp-hero-main {
+    margin-top: 0;
+    padding-top: 14px;
+    row-gap: 0;
+  }
+  /* Flatten the text wrapper so its 3 children + the dial become 4 siblings
+     in the single-column grid, and we can interleave them freely.
+     Mobile order: big WYP → dial → "Watch Your Passion" overline → swiss line. */
+  .lp-hero-text {
+    display: contents;
+  }
+  .lp-hero-text > .lp-hero-logotype {
     order: 1;
+    justify-self: center;
+    margin: -8px 0 0;
+  }
+  .lp-hero-watch {
+    order: 2;
     width: 56vw;
     max-width: 240px;
     justify-self: center;
-    margin: 24px auto 0;
+    margin: -60px auto 0;
   }
-  /* Hero text block: everything centred — overline, big WYP logotype, swiss line */
-  .lp-hero-text {
-    order: 2;
-    align-self: stretch;
-    align-items: center;
+  .lp-hero-text > .lp-overline {
+    order: 3;
+    justify-self: center;
     text-align: center;
-    padding-left: 0;
-    gap: var(--s-4);
+    margin-top: 24px;
   }
-  .lp-hero-text .lp-overline { align-self: center; text-align: center; }
-  .lp-hero-text .lp-hero-logotype { margin: -40px 0 0; align-self: center; }
-  .lp-hero-text .lp-hero-line {
-    align-self: center;
+  .lp-hero-text > .lp-hero-line {
+    order: 4;
+    justify-self: center;
     text-align: center;
     padding-left: var(--s-5);
     padding-right: var(--s-5);
     max-width: 34ch;
+    margin-top: 106px;
   }
 
   /* Hero bottom row: PHASE I left + ENGLISH right on row 1, SCROLL centred on row 2 */
