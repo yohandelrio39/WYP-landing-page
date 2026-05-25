@@ -142,7 +142,7 @@ export default function Home() {
             </div>
 
             <div className="lp-collab-text reveal" data-delay="2">
-              <span className="lp-collab-tag">WYP × MHA — Phase I</span>
+              <span className="lp-collab-tag">WYP × MHA</span>
               <h3 className="lp-collab-title">
                 Every collection<br />is a dialogue.
               </h3>
@@ -154,16 +154,16 @@ export default function Home() {
 
               <div className="lp-collab-stats">
                 <div className="lp-collab-stat reveal" data-delay="1">
-                  <span className="lbl">Edition</span>
-                  <span className="val">037 / 250</span>
+                  <span className="lbl">Case</span>
+                  <span className="val">Ø 39 mm</span>
                 </div>
                 <div className="lp-collab-stat reveal" data-delay="2">
-                  <span className="lbl">Phase</span>
-                  <span className="val">I · 2026</span>
+                  <span className="lbl">Origin</span>
+                  <span className="val">Swiss Made</span>
                 </div>
                 <div className="lp-collab-stat reveal" data-delay="3">
-                  <span className="lbl">Origin</span>
-                  <span className="val">Geneva · CH</span>
+                  <span className="lbl">Phase</span>
+                  <span className="val">I · 2026</span>
                 </div>
               </div>
             </div>
