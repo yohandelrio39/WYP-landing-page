@@ -1,0 +1,17 @@
+{
+  "name": "WYP — Watch Your Passion",
+  "short_name": "WYP",
+  "description": "Swiss licensed watch brand creating collector timepieces inspired by iconic universes.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "icons": [
+    {
+      "src": "/assets/logos/WYP_ICON_BLANC.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

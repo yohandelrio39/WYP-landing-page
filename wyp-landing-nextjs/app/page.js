@@ -13,7 +13,7 @@ export default function Home() {
       <header className="lp-hero" id="hero">
         <div className="lp-container lp-hero-main">
           <div className="lp-hero-text">
-            <span className="lp-overline reveal" data-delay="1">Watch Your Passion</span>
+            <h1 className="lp-overline reveal" data-delay="1">Watch Your Passion</h1>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="lp-hero-logotype reveal"
@@ -53,7 +53,7 @@ export default function Home() {
           <div className="lp-horizon lp-horizon--strong reveal" aria-hidden="true" />
           <div className="lp-section-head reveal">
             <span className="lp-snum">02 — VISION</span>
-            <h2 className="lp-section-title">More than a collectible.<br />More than a watch.</h2>
+            <h2 className="lp-section-title">More<br />than a<br />collectible.<br />More<br />than a<br />watch.</h2>
           </div>
 
           <div className="lp-vision-body">
@@ -64,7 +64,6 @@ export default function Home() {
             </div>
 
             <div className="lp-vision-side reveal" data-delay="2">
-              <span className="lp-meta">MANIFESTO · N°01</span>
               <span className="lp-vision-sign">Watch Your Passion.</span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img className="lp-vision-icon" src="/assets/logos/WYP_ICON_BLANC.png" alt="" aria-hidden="true" />
@@ -96,7 +95,7 @@ export default function Home() {
           <div className="lp-produit-grid">
             <figure className="lp-pf lp-pf--hero reveal" data-delay="3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/imagery/wyp_img_03.jpg" alt="Sculpted curves — light study" />
+              <img src="/assets/imagery/wyp_img_03.jpg" alt="Sculpted curves — light study" loading="lazy" />
               <figcaption className="lp-pf-caption">
                 <span className="num">03 / 03</span>
                 <span className="lbl">↓ Curves</span>
@@ -105,7 +104,7 @@ export default function Home() {
 
             <figure className="lp-pf lp-pf--top reveal" data-delay="1">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/imagery/wyp_contrast.jpg" alt="Light and shadow study" />
+              <img src="/assets/imagery/wyp_contrast.jpg" alt="Light and shadow study" loading="lazy" />
               <figcaption className="lp-pf-caption">
                 <span className="num">01 / 03</span>
                 <span className="lbl">↓ Light</span>
@@ -114,7 +113,7 @@ export default function Home() {
 
             <figure className="lp-pf lp-pf--bot reveal" data-delay="2">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/imagery/wyp_img_01.jpg" alt="Material texture — brushed lines" />
+              <img src="/assets/imagery/wyp_img_01.jpg" alt="Material texture — brushed lines" loading="lazy" />
               <figcaption className="lp-pf-caption">
                 <span className="num">02 / 03</span>
                 <span className="lbl">↓ Material</span>
@@ -136,9 +135,9 @@ export default function Home() {
           <div className="lp-collab-body">
             <div className="lp-collab-art lp-collab-art--dual reveal" data-delay="1">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img className="cadran-nuit" src="/assets/imagery/cadran_nuit.png" alt="WYP × MHA dial — night lume" />
+              <img className="cadran-nuit" src="/assets/imagery/cadran_nuit.png" alt="WYP × MHA dial — night lume" loading="lazy" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img className="cadran-jour" src="/assets/imagery/cadran_jour.png" alt="WYP × MHA dial — day" />
+              <img className="cadran-jour" src="/assets/imagery/cadran_jour.png" alt="WYP × MHA dial — day" loading="lazy" />
               <DialThemeToggle />
             </div>
 
@@ -204,7 +203,7 @@ export default function Home() {
           <div className="lp-footer-inner">
             <div className="lp-footer-icon reveal" data-delay="1">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/logos/WYP_ICON_BLANC.png" alt="WYP" />
+              <img src="/assets/logos/WYP_ICON_BLANC.png" alt="WYP" loading="lazy" />
             </div>
 
             <div className="lp-footer-center reveal" data-delay="2">
