@@ -1373,8 +1373,15 @@ body[data-theme="jour"] .lp-section--light .lp-horizon--light::after  { backgrou
   .lp-collab-stats    { order: 4; width: 100%; }
 }
 
+/* Responsive visibility helpers — show one variant per breakpoint */
+.show-mobile { display: none; }
+.show-desktop { display: inline; }
+
 /* ───────── PHONE (≤ 600px) — layout only, typography inherits from design system ───────── */
 @media (max-width: 600px) {
+  .show-desktop { display: none; }
+  .show-mobile { display: inline; }
+
   /* Layout-only tokens (no typography overrides — type cascades from :root) */
   body {
     --tw-section-pad: clamp(56px, 11vh, 88px);
@@ -1387,46 +1394,47 @@ body[data-theme="jour"] .lp-section--light .lp-horizon--light::after  { backgrou
   .lp-nav-left { visibility: hidden; }
 
   /* ── Hero ──────────────────────────────────────────── */
-  /* Push hero content down so the dial sits ~mid-viewport, and keep the whole
-     hero (incl. bottom meta row) within one phone screen height. */
-  .lp-hero { padding: var(--s-7) 0 var(--s-4); }
+  /* Use a 1fr/auto row split so hero-main can self-center vertically.
+     padding-top compensates for the text below the dial so the dial itself
+     (not the dial+text block) ends up at the hero's vertical center. */
+  .lp-hero { padding: var(--s-7) 0 var(--s-4); grid-template-rows: 1fr auto; }
   .lp-hero-main {
     margin-top: 0;
-    padding-top: 14px;
+    padding-top: 220px;
     row-gap: 0;
+    align-self: center;
   }
   /* Flatten the text wrapper so its 3 children + the dial become 4 siblings
      in the single-column grid, and we can interleave them freely.
-     Mobile order: big WYP → dial → "Watch Your Passion" overline → swiss line. */
+     Mobile order: dial centred → "WYP" overline → swiss line.
+     The big WYP logotype is hidden on mobile — the overline takes its role. */
   .lp-hero-text {
     display: contents;
   }
   .lp-hero-text > .lp-hero-logotype {
-    order: 1;
-    justify-self: center;
-    margin: -8px 0 0;
+    display: none;
   }
   .lp-hero-watch {
-    order: 2;
+    order: 1;
     width: 56vw;
     max-width: 240px;
     justify-self: center;
-    margin: -60px auto 0;
+    margin: 0 auto;
   }
   .lp-hero-text > .lp-overline {
-    order: 3;
+    order: 2;
     justify-self: center;
     text-align: center;
-    margin-top: 24px;
+    margin-top: 32px;
   }
   .lp-hero-text > .lp-hero-line {
-    order: 4;
+    order: 3;
     justify-self: center;
     text-align: center;
     padding-left: var(--s-5);
     padding-right: var(--s-5);
     max-width: 34ch;
-    margin-top: 106px;
+    margin-top: 24px;
   }
 
   /* Hero bottom row: PHASE I left + ENGLISH right on row 1, SCROLL centred on row 2 */

@@ -1,6 +1,6 @@
 import './globals.css'
 
-const SITE_URL = 'https://wyp.watch' // TODO: update with final domain
+const SITE_URL = 'https://wyp-landing-page.vercel.app' // TODO: switch to https://wyp.watch when domain is live
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -74,7 +74,8 @@ const jsonLd = [
       addressCountry: 'CH'
     },
     sameAs: [
-      'https://instagram.com/wyp.geneva'
+      'https://instagram.com/wyp.ch',
+      'https://tiktok.com/@wyp.ch'
     ]
   },
   {

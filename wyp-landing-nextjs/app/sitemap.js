@@ -1,4 +1,4 @@
-const SITE_URL = 'https://wyp.watch' // TODO: update with final domain
+const SITE_URL = 'https://wyp-landing-page.vercel.app' // TODO: switch to https://wyp.watch when domain is live
 
 export default function sitemap() {
   return [

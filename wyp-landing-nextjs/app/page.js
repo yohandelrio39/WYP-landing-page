@@ -13,7 +13,10 @@ export default function Home() {
       <header className="lp-hero" id="hero">
         <div className="lp-container lp-hero-main">
           <div className="lp-hero-text">
-            <h1 className="lp-overline reveal" data-delay="1">Watch Your Passion</h1>
+            <h1 className="lp-overline reveal" data-delay="1">
+              <span className="show-desktop">Watch Your Passion</span>
+              <span className="show-mobile">WYP</span>
+            </h1>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="lp-hero-logotype reveal"
@@ -58,7 +61,8 @@ export default function Home() {
 
           <div className="lp-vision-body">
             <div className="lp-vision-lines reveal" data-delay="1">
-              <p>WYP creates licensed watches designed to become <em>lasting objects of passion.</em></p>
+              <p>WYP creates licensed watches designed to become<br />
+              <em>lasting objects of passion.</em></p>
               <p>Built around iconic universes.<br />
               <em>Designed to live beyond trends.</em></p>
             </div>
@@ -142,7 +146,7 @@ export default function Home() {
             </div>
 
             <div className="lp-collab-text reveal" data-delay="2">
-              <span className="lp-collab-tag">WYP × MHA</span>
+              <span className="lp-collab-tag">WYP × MHA — exemple</span>
               <h3 className="lp-collab-title">
                 Every collection<br />is a dialogue.
               </h3>
@@ -187,11 +191,11 @@ export default function Home() {
             </h3>
 
             <div className="lp-suite-meta">
-              <span className="lp-suite-date">09 . 2026</span>
+              <span className="lp-suite-date">Coming soon</span>
               <p className="lp-suite-note">
                 Built in silence. Revealed in time.
               </p>
-              <span className="lp-meta">First public opening — store to follow.</span>
+              <span className="lp-meta">First public opening — to follow.</span>
             </div>
           </div>
         </div>
@@ -214,8 +218,11 @@ export default function Home() {
             </div>
 
             <div className="lp-footer-right reveal" data-delay="3">
-              <a className="lp-ig" href="https://instagram.com/wyp.geneva" target="_blank" rel="noopener noreferrer">
-                Instagram <span className="arrow">→</span> @wyp.geneva
+              <a className="lp-ig" href="https://instagram.com/wyp.ch" target="_blank" rel="noopener noreferrer">
+                Instagram <span className="arrow">→</span> @wyp.ch
+              </a>
+              <a className="lp-ig" href="https://tiktok.com/@wyp.ch" target="_blank" rel="noopener noreferrer">
+                TikTok <span className="arrow">→</span> @wyp.ch
               </a>
               <span className="lp-meta">WYP · GENEVA · CH</span>
             </div>
