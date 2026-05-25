@@ -890,13 +890,10 @@ body[data-theme="jour"] .lp-pf--dual .cadran-jour { opacity: 1; }
   z-index: 1;
 }
 
-/* The day PNG's circle is smaller (Ø825 vs Ø880) and sits ~15px higher than
-   the night dial. Scale + nudge it onto the night dial's center so the crossfade
-   doesn't shift. Values derived from each PNG's measured circle center. */
 .lp-collab-art--dual .cadran-jour {
-  --cadran-jour-scale: 1.061;
-  --cadran-jour-dx: -1.59%;
-  --cadran-jour-dy: 1.36%;
+  --cadran-jour-scale: 1;
+  --cadran-jour-dx: 2.5%;
+  --cadran-jour-dy: 0%;
   transform:
     translate(calc(-50% + var(--cadran-jour-dx)), calc(-50% + var(--cadran-jour-dy)))
     scale(var(--cadran-jour-scale));
