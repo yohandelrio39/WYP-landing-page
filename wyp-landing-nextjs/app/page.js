@@ -213,7 +213,7 @@ export default function Home() {
             <div className="lp-footer-center reveal" data-delay="2">
               <span className="lp-meta">For licensing inquiries</span>
               <a className="lp-ig" href="mailto:inquiries@wyp.ch">
-                Contact <span className="arrow">→</span>
+                inquiries@wyp.ch
               </a>
             </div>
 
