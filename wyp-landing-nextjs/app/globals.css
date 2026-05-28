@@ -733,9 +733,10 @@ body[data-theme="jour"] .lp-hero-watch::before {
   transition: transform var(--dur-slow) var(--ease-out);
 }
 .lp-pf:hover img { transform: scale(1.025); }
-.lp-pf--hero { grid-column: 2; grid-row: 1 / span 2; aspect-ratio: auto; min-height: 720px; }
+.lp-pf--hero { grid-column: 2; grid-row: 1 / span 2; aspect-ratio: auto; min-height: 720px; background: #000; }
 .lp-pf--top  { grid-column: 1; grid-row: 1; aspect-ratio: 4 / 3; }
 .lp-pf--bot  { grid-column: 1; grid-row: 2; aspect-ratio: 4 / 3; }
+.lp-pf--bot img { object-position: bottom; }
 
 .lp-pf-caption {
   position: absolute;
@@ -763,6 +764,11 @@ body[data-theme="jour"] .lp-hero-watch::before {
 .lp-pf--contain img {
   object-fit: contain;
   object-position: center center;
+}
+.lp-pf--hero img {
+  object-fit: contain;
+  object-position: center center;
+  padding: 24px;
 }
 
 /* ── Dual-image crossfade cadran ─────────────────────────────────────────────
@@ -995,6 +1001,7 @@ body[data-theme="jour"] .lp-dial-toggle:hover {
   border-top: 1px solid rgba(245,245,245,0.18);
   padding-top: 18px;
   gap: var(--s-5);
+  margin-left: clamp(16px, 3%, 32px);
 }
 .lp-collab-stat .lbl {
   display: block;
@@ -1370,7 +1377,7 @@ body[data-theme="jour"] .lp-section--light .lp-horizon--light::after  { backgrou
   .lp-collab-title    { order: 1; text-align: center; }
   .lp-collab-tag      { order: 2; align-self: center; }
   .lp-collab-body-text{ order: 3; }
-  .lp-collab-stats    { order: 4; width: 100%; }
+  .lp-collab-stats    { order: 4; width: 100%; margin-left: 0; }
 }
 
 /* Responsive visibility helpers — show one variant per breakpoint */
@@ -1397,10 +1404,10 @@ body[data-theme="jour"] .lp-section--light .lp-horizon--light::after  { backgrou
   /* Use a 1fr/auto row split so hero-main can self-center vertically.
      padding-top compensates for the text below the dial so the dial itself
      (not the dial+text block) ends up at the hero's vertical center. */
-  .lp-hero { padding: var(--s-7) 0 var(--s-4); grid-template-rows: 1fr auto; }
+  .lp-hero { padding: var(--s-7) 0 var(--s-4); grid-template-rows: 1fr auto; min-height: 87vh; }
   .lp-hero-main {
     margin-top: 0;
-    padding-top: 220px;
+    padding-top: 30px;
     row-gap: 0;
     align-self: center;
   }
@@ -1492,7 +1499,7 @@ body[data-theme="jour"] .lp-section--light .lp-horizon--light::after  { backgrou
   .lp-collab-title    { order: 1; text-align: center; }
   .lp-collab-tag      { order: 2; align-self: center; }
   .lp-collab-body-text{ order: 3; }
-  .lp-collab-stats    { order: 4; width: 100%; }
+  .lp-collab-stats    { order: 4; width: 100%; margin-left: 0; }
   /* Collab dial a touch smaller on phones + horizontally centred under the title */
   .lp-collab-art {
     width: 100%;

@@ -99,10 +99,10 @@ export default function Home() {
           <div className="lp-produit-grid">
             <figure className="lp-pf lp-pf--hero reveal" data-delay="3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/imagery/wyp_img_03.jpg" alt="Sculpted curves — light study" loading="lazy" />
+              <img src="/assets/imagery/wyp_watch_full.png" alt="Sculpted curves — light study" loading="lazy" />
               <figcaption className="lp-pf-caption">
                 <span className="num">03 / 03</span>
-                <span className="lbl">↓ Curves</span>
+                <span className="lbl">↓ Design</span>
               </figcaption>
             </figure>
 
@@ -117,10 +117,10 @@ export default function Home() {
 
             <figure className="lp-pf lp-pf--bot reveal" data-delay="2">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/imagery/wyp_img_01.jpg" alt="Material texture — brushed lines" loading="lazy" />
+              <img src="/assets/imagery/wyp_material_new.jpg" alt="Material texture — brushed lines" loading="lazy" />
               <figcaption className="lp-pf-caption">
                 <span className="num">02 / 03</span>
-                <span className="lbl">↓ Material</span>
+                <span className="lbl">↓ Longevity</span>
               </figcaption>
             </figure>
           </div>
@@ -162,8 +162,8 @@ export default function Home() {
                   <span className="val">Ø 39 mm</span>
                 </div>
                 <div className="lp-collab-stat reveal" data-delay="2">
-                  <span className="lbl">Origin</span>
-                  <span className="val">Swiss Made</span>
+                  <span className="lbl">Design</span>
+                  <span className="val">Swiss</span>
                 </div>
                 <div className="lp-collab-stat reveal" data-delay="3">
                   <span className="lbl">Phase</span>
@@ -212,7 +212,7 @@ export default function Home() {
 
             <div className="lp-footer-center reveal" data-delay="2">
               <span className="lp-meta">For licensing inquiries</span>
-              <a className="lp-ig" href="mailto:CONTACT_EMAIL_PLACEHOLDER">
+              <a className="lp-ig" href="mailto:inquiries@wyp.ch">
                 Contact <span className="arrow">→</span>
               </a>
             </div>
