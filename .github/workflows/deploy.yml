@@ -1,0 +1,43 @@
+name: Deploy to Infomaniak
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: wyp-landing-nextjs/package-lock.json
+
+      - name: Install dependencies
+        working-directory: wyp-landing-nextjs
+        run: npm install
+
+      - name: Build static export
+        working-directory: wyp-landing-nextjs
+        run: npm run build
+
+      - name: Deploy via FTP to Infomaniak
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: h2park-8d750cc5.infomaniak.ch
+          username: 8o2npm_Claudeyoh
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: 21
+          local-dir: wyp-landing-nextjs/out/
+          server-dir: /
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
