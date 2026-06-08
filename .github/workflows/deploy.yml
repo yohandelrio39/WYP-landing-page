@@ -31,8 +31,8 @@ jobs:
       - name: Deploy via FTP to Infomaniak
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: h2park-8d750cc5.infomaniak.ch
-          username: 8o2npm_Claudeyoh
+          server: 8o2npm.ftp.infomaniak.com
+          username: 8o2npm_wyp
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
           local-dir: wyp-landing-nextjs/out/
