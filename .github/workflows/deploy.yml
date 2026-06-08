@@ -36,7 +36,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
           local-dir: wyp-landing-nextjs/out/
-          server-dir: /
+          server-dir: /web/
           exclude: |
             **/.git*
             **/.git*/**
