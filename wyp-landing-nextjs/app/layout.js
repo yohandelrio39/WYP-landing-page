@@ -1,6 +1,6 @@
 import './globals.css'
 
-const SITE_URL = 'https://wyp-landing-page.vercel.app' // TODO: switch to https://wyp.watch when domain is live
+const SITE_URL = 'https://wyp.ch'
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -9,7 +9,13 @@ export const metadata = {
     template: '%s | WYP'
   },
   description: 'WYP is a Swiss licensed watch brand creating collector timepieces inspired by iconic universes. Limited editions — Geneva, 2026.',
-  keywords: ['WYP', 'Watch Your Passion', 'Swiss watch', 'licensed watch', 'collector timepiece', 'Geneva', 'limited edition watch', 'WYP MHA', 'montre suisse', 'montre collector'],
+  keywords: [
+    'WYP', 'wyp.ch', 'wyp watch', 'Watch Your Passion',
+    'Swiss watch', 'Swiss licensed watch', 'licensed watch', 'licensed timepiece',
+    'collector timepiece', 'limited edition watch', 'limited edition swiss watch',
+    'Geneva watch', 'Geneva', 'WYP MHA',
+    'montre suisse', 'montre collector', 'montre édition limitée', 'montre licenciée',
+  ],
   authors: [{ name: 'WYP — HYPERBIEN®' }],
   creator: 'HYPERBIEN®',
   publisher: 'WYP',
