@@ -99,7 +99,7 @@ export default function Home() {
           <div className="lp-produit-grid">
             <figure className="lp-pf lp-pf--hero reveal" data-delay="3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/imagery/wyp_watch_full.png" alt="Sculpted curves — light study" loading="lazy" />
+              <img src="/assets/imagery/wyp_watch_full.png" alt="WYP Swiss collector watch — limited edition manga collaboration" loading="lazy" />
               <figcaption className="lp-pf-caption">
                 <span className="num">03 / 03</span>
                 <span className="lbl">↓ Design</span>
@@ -139,9 +139,9 @@ export default function Home() {
           <div className="lp-collab-body">
             <div className="lp-collab-art lp-collab-art--dual reveal" data-delay="1">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img className="cadran-nuit" src="/assets/imagery/cadran_nuit.png" alt="WYP × MHA dial — night lume" loading="lazy" />
+              <img className="cadran-nuit" src="/assets/imagery/cadran_nuit.png" alt="WYP × MHA dial — My Hero Academia night lume edition" loading="lazy" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img className="cadran-jour" src="/assets/imagery/cadran_jour.png" alt="WYP × MHA dial — day" loading="lazy" />
+              <img className="cadran-jour" src="/assets/imagery/cadran_jour.png" alt="WYP × MHA dial — My Hero Academia day edition" loading="lazy" />
               <DialThemeToggle />
             </div>
 
