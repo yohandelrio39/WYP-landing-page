@@ -433,7 +433,7 @@ img { display: block; max-width: 100%; }
   align-items: center;
   gap: var(--s-4);
 }
-.lp-nav-left  { justify-self: start; }
+.lp-nav-left  { justify-self: start; align-self: start; padding-top: 10px; }
 .lp-nav-right { justify-self: end; }
 .lp-nav-logo {
   height: var(--tw-nav-logo-h);
@@ -510,6 +510,9 @@ img { display: block; max-width: 100%; }
   height: auto;
   margin-left: -6px;
   transition: width var(--dur-base) var(--ease-out);
+}
+.lp-hero-logotype-mobile {
+  display: none;
 }
 .lp-hero-line {
   font-family: var(--font-sans);
@@ -1421,6 +1424,14 @@ body[data-theme="jour"] .lp-section--light .lp-horizon--light::after  { backgrou
   .lp-hero-text > .lp-hero-logotype {
     display: none;
   }
+  .lp-hero-text > .lp-hero-logotype-mobile {
+    order: 2;
+    display: block;
+    justify-self: center;
+    width: clamp(180px, 60vw, 260px);
+    height: auto;
+    margin: 28px auto;
+  }
   .lp-hero-watch {
     order: 1;
     width: 56vw;
@@ -1429,10 +1440,7 @@ body[data-theme="jour"] .lp-section--light .lp-horizon--light::after  { backgrou
     margin: 0 auto;
   }
   .lp-hero-text > .lp-overline {
-    order: 2;
-    justify-self: center;
-    text-align: center;
-    margin-top: 32px;
+    display: none;
   }
   .lp-hero-text > .lp-hero-line {
     order: 3;

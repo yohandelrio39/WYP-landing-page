@@ -24,6 +24,13 @@ export default function Home() {
               src="/assets/logos/WYP_LOGOTYPE_BLANC.png"
               alt="WYP"
             />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              className="lp-hero-logotype-mobile reveal"
+              data-delay="2"
+              src="/assets/logos/WYP_LOGO_LOCK-UP2_BLANC.png"
+              alt="WYP — Watch Your Passion"
+            />
             <p className="lp-hero-line reveal" data-delay="3">
               Swiss watch brand creating licensed timepieces<br />
               <span className="ar">inspired by iconic universes.</span>
