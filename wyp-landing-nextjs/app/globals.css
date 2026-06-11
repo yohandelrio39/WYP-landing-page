@@ -503,6 +503,7 @@ img { display: block; max-width: 100%; }
   display: flex; flex-direction: column;
   gap: 36px;
   padding-left: clamp(var(--s-5), 4vw, var(--s-8));
+  padding-top: var(--s-3);
 }
 .lp-hero-logotype {
   display: block;
@@ -1428,16 +1429,17 @@ body[data-theme="jour"] .lp-section--light .lp-horizon--light::after  { backgrou
     order: 2;
     display: block;
     justify-self: center;
-    width: clamp(180px, 60vw, 260px);
+    width: calc(100vw - 4px);
+    max-width: 540px;
     height: auto;
-    margin: 28px auto;
+    margin: 14px calc(-1 * var(--gutter));
   }
   .lp-hero-watch {
     order: 1;
     width: 56vw;
     max-width: 240px;
     justify-self: center;
-    margin: 0 auto;
+    margin: var(--s-6) auto 0;
   }
   .lp-hero-text > .lp-overline {
     display: none;

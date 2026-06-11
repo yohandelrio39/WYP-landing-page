@@ -21,14 +21,14 @@ export default function Home() {
             <img
               className="lp-hero-logotype reveal"
               data-delay="2"
-              src="/assets/logos/WYP_LOGOTYPE_BLANC.png"
+              src="/assets/logos/WYP_LOGO_LOCK-UP1_BLANC.png"
               alt="WYP"
             />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="lp-hero-logotype-mobile reveal"
               data-delay="2"
-              src="/assets/logos/WYP_LOGO_LOCK-UP2_BLANC.png"
+              src="/assets/logos/WYP_LOGO_LOCK-UP1_BLANC.png"
               alt="WYP — Watch Your Passion"
             />
             <p className="lp-hero-line reveal" data-delay="3">
