@@ -1206,7 +1206,8 @@ body[data-theme="jour"] .lp-theme-toggle:hover {
 
 /* ── PNG logos: white → invert to black on light bg ── */
 body[data-theme="jour"] .lp-nav-logo        { filter: invert(1); }
-body[data-theme="jour"] .lp-hero-logotype   { filter: invert(1); }
+body[data-theme="jour"] .lp-hero-logotype,
+body[data-theme="jour"] .lp-hero-logotype-mobile { filter: invert(1); }
 body[data-theme="jour"] .lp-vision-icon { filter: invert(1); }
 body[data-theme="jour"] .lp-footer-icon img { filter: invert(1); }
 
