@@ -5,7 +5,7 @@ const SITE_URL = 'https://wyp.ch'
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'WYP — Watch Your Passion',
+    default: 'WYP',
     template: '%s | WYP'
   },
   description: 'WYP is a Swiss licensed watch brand creating collector timepieces inspired by iconic universes — manga, anime and beyond. Limited editions — Geneva, 2026.',
@@ -31,8 +31,8 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
     url: SITE_URL,
-    siteName: 'WYP — Watch Your Passion',
-    title: 'WYP — Watch Your Passion',
+    siteName: 'WYP',
+    title: 'WYP',
     description: 'Swiss licensed watch brand creating collector timepieces inspired by iconic universes — manga, anime and beyond. Limited editions — Geneva, 2026.',
     images: [
       {
@@ -45,7 +45,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'WYP — Watch Your Passion',
+    title: 'WYP',
     description: 'Swiss licensed watch brand creating collector timepieces inspired by iconic universes — manga, anime and beyond. Limited editions — Geneva, 2026.',
     images: ['/assets/og-image.jpg'],
   },
@@ -87,7 +87,7 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'WYP — Watch Your Passion',
+    name: 'WYP',
     url: SITE_URL,
     description: 'Swiss licensed watch brand creating collector timepieces inspired by iconic universes — manga, anime and beyond. Limited editions — Geneva, 2026.',
     publisher: {
