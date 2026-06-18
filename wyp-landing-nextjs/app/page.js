@@ -229,8 +229,7 @@ export default function Home() {
           </div>
 
           <div className="lp-footer-bottom reveal" data-delay="4">
-            <span>Watch Your Passion ®</span>
-            <span>© 2026 · HYPERBIEN®</span>
+            <span>© 2026</span>
           </div>
         </div>
       </footer>

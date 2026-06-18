@@ -16,8 +16,8 @@ export const metadata = {
     'montre manga', 'montre suisse collector', 'montre édition limitée',
     'BTS watch', 'K-pop watch', 'BTS collector watch',
   ],
-  authors: [{ name: 'WYP — HYPERBIEN®' }],
-  creator: 'HYPERBIEN®',
+  authors: [{ name: 'WYP' }],
+  creator: 'WYP',
   publisher: 'WYP',
   robots: {
     index: true,
