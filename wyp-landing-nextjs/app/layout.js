@@ -14,7 +14,7 @@ export const metadata = {
     'Swiss licensed watch', 'collector timepiece', 'limited edition watch',
     'manga watch', 'anime watch', 'licensed manga watch', 'anime collector watch',
     'montre manga', 'montre suisse collector', 'montre édition limitée',
-    'My Hero Academia watch', 'MHA watch',
+    'BTS watch', 'K-pop watch', 'BTS collector watch',
   ],
   authors: [{ name: 'WYP — HYPERBIEN®' }],
   creator: 'HYPERBIEN®',

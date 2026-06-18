@@ -141,9 +141,9 @@ export default function Home() {
           <div className="lp-collab-body">
             <div className="lp-collab-art lp-collab-art--dual reveal" data-delay="1">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img className="cadran-nuit" src="/assets/imagery/PurpleOcean_Fluo_transparent.png" alt="WYP × MHA dial — My Hero Academia night lume edition" loading="lazy" />
+              <img className="cadran-nuit" src="/assets/imagery/PurpleOcean_Fluo_transparent.png" alt="WYP × BTS dial — BTS night lume edition" loading="lazy" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img className="cadran-jour" src="/assets/imagery/PurpleOcean_Fluo_transparent.png" alt="WYP × MHA dial — My Hero Academia day edition" loading="lazy" />
+              <img className="cadran-jour" src="/assets/imagery/PurpleOcean_Fluo_transparent.png" alt="WYP × BTS dial — BTS day edition" loading="lazy" />
               <DialThemeToggle />
             </div>
 
