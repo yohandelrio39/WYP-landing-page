@@ -13,23 +13,19 @@ export default function Home() {
       <header className="lp-hero" id="hero">
         <div className="lp-container lp-hero-main">
           <div className="lp-hero-text">
-            <h1 className="lp-overline reveal" data-delay="1">
-              <span className="show-desktop">Watch Your Passion</span>
-              <span className="show-mobile">WYP</span>
-            </h1>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="lp-hero-logotype reveal"
               data-delay="2"
-              src="/assets/logos/WYP_LOGO_LOCK-UP1_BLANC.png"
+              src="/assets/logos/WYP_LOGOTYPE_BLANC.png"
               alt="WYP"
             />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               className="lp-hero-logotype-mobile reveal"
               data-delay="2"
-              src="/assets/logos/WYP_LOGO_LOCK-UP1_BLANC.png"
-              alt="WYP — Watch Your Passion"
+              src="/assets/logos/WYP_LOGOTYPE_BLANC.png"
+              alt="WYP"
             />
             <p className="lp-hero-line reveal" data-delay="3">
               Swiss watch brand creating licensed timepieces<br />
@@ -75,7 +71,6 @@ export default function Home() {
             </div>
 
             <div className="lp-vision-side reveal" data-delay="2">
-              <span className="lp-vision-sign">Watch Your Passion.</span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img className="lp-vision-icon" src="/assets/logos/WYP_ICON_BLANC.png" alt="" aria-hidden="true" />
             </div>
@@ -146,21 +141,19 @@ export default function Home() {
           <div className="lp-collab-body">
             <div className="lp-collab-art lp-collab-art--dual reveal" data-delay="1">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img className="cadran-nuit" src="/assets/imagery/cadran_nuit.png" alt="WYP × MHA dial — My Hero Academia night lume edition" loading="lazy" />
+              <img className="cadran-nuit" src="/assets/imagery/PurpleOcean_Fluo_transparent.png" alt="WYP × MHA dial — My Hero Academia night lume edition" loading="lazy" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img className="cadran-jour" src="/assets/imagery/cadran_jour.png" alt="WYP × MHA dial — My Hero Academia day edition" loading="lazy" />
+              <img className="cadran-jour" src="/assets/imagery/PurpleOcean_Fluo_transparent.png" alt="WYP × MHA dial — My Hero Academia day edition" loading="lazy" />
               <DialThemeToggle />
             </div>
 
             <div className="lp-collab-text reveal" data-delay="2">
-              <span className="lp-collab-tag">WYP × MHA — exemple</span>
+              <span className="lp-collab-tag">WYP × BTS — exemple</span>
               <h3 className="lp-collab-title">
-                Every collection<br />is a dialogue.
+                From culture to object.
               </h3>
               <p className="lp-collab-body-text">
-                The WYP dial is a surface. Collaborations bring to it a color,
-                a story, a culture. The brand itself stays constant — graphic
-                base, precision, structure.
+                Stories create attachment.<br />Experiences create meaning.<br />WYP transforms both into lasting objects designed to carry that meaning forward.
               </p>
 
               <div className="lp-collab-stats">
