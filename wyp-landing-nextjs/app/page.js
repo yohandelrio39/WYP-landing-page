@@ -148,7 +148,7 @@ export default function Home() {
             </div>
 
             <div className="lp-collab-text reveal" data-delay="2">
-              <span className="lp-collab-tag">WYP × BTS — exemple</span>
+              <span className="lp-collab-tag">WYP - Prototype</span>
               <h3 className="lp-collab-title">
                 From culture to object.
               </h3>
